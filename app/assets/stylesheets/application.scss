@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1.9;
+  padding: 30px;
+  color: #777;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba(0, 91, 169, 0.8), 
+    rgba(40, 180, 131, 0.8)),
+  url(/assets/logo-back2.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  
+  .logo {
+    position: absolute;
+    left: 45px;
+    top: 45px;
+    
+    span {
+      font-size: 60px;
+      letter-spacing: -7px;
+      line-height: 1.7;
+      font-weight: 500;
+      color: #fff;
+    }
+  }
+
+  .sign-up-contanier {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .slogan {
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+
+      .slogan-main {
+        display: block;
+        font-size: 47px;
+        font-weight: 500;
+        letter-spacing: 20px;
+      }
+
+      .slogan-sec {
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 18px;
+      }
+    }
+  }
+  
+}

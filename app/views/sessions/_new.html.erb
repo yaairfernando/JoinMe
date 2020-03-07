@@ -1,0 +1,18 @@
+  <div class="form__title">
+    <h3>Sign In to your account</h3>
+    <span>Bring the best events with your family and friends.</span>
+  </div>
+  
+  <%= simple_form_for(:session , url: login_path, html: { multipart: true, class: "form__body" } ) do |f| %>
+    <div class="form__input">
+      <%= f.input :email, placeholder: "Email Address" , label: false  %>
+    </div>
+
+    <div class="form__input">
+      <%= f.input :password, placeholder: "Password", label: false %>
+    </div>
+  
+    <div class="form__input">
+      <%= f.submit 'Sign Up' %>
+    </div>
+  <% end %>

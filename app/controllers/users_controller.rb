@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    byebug
+    # byebug
     if @user.save
       flash[:success] = "Thanks for loggin in!!"
       redirect_to root_path

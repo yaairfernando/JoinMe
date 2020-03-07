@@ -88,14 +88,23 @@
     margin-top: 6rem;
     margin-bottom: 10rem;
 
+    .input {
+      margin-bottom: 2rem;
+    }
+
     input {
       width: 100%;
       padding: 2rem;
-      border-radius: 0.4rem;
+      border-radius: 0.6rem;
       border: 1px solid #96a0aa;
       font-size: 1.4rem;
       font-weight: 100;
-      margin-bottom: 2rem;
+      outline: 0 none;
+      color: #777;
+    }
+
+    input:focus {
+      border: 3px solid #551A8B;
     }
 
     input[type="submit"] {
@@ -104,6 +113,20 @@
       color: #fff;
       font-size: 1.9rem;
       border: none;
+      margin-top: 2rem;
+    }
+
+    .error {
+      color: #551A8B;
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .form__terms {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      margin-bottom: 2rem;
     }
   }
+
 }

@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'script' %>
+
 <header class="header">
   <div class="header__logo">
     <span>JoinMe</span>
@@ -9,6 +11,6 @@
       <span class="slogan--sec">only with one click!</span>
     </h1>
 
-    <%= link_to 'Sign Up', sign_up_path, class: "btn btn--white btn--animated" %>
+    <%= link_to 'Sign Up', sign_up_path, class: "btn btn--white btn--animated", id: "sign-up" %>
   </div>
 </header>

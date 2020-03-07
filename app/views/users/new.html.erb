@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'script' %>
+
 <header class="header_sign_up">
   <div class="header_sign_up__logo">
     <span><%= link_to "JoinMe", root_path %></span>
@@ -7,8 +9,8 @@
 <div class="form">
   
   <div class="form__header">
-    <%= link_to 'Sign Up', sign_up_path, class: "form__header--signup" %>
-    <%= link_to 'Sign In', login_path, class: "form__header--signin" %>
+    <%= link_to 'Sign Up', sign_up_path, class: "form__header--signup", id: "sign-up" %>
+    <%= link_to 'Sign In', login_path, class: "form__header--signin", id: "sign-in" %>
   </div>
 
   <div class="form__title">

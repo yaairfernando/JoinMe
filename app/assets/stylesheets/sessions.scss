@@ -59,6 +59,10 @@
       text-decoration: none;
       padding: 2.4rem 0;
     }
+
+    .active {
+      border: 3px solid red;
+    }
   }
 
   .form__title {

@@ -1,17 +1,37 @@
 <header class="header_sign_up">
   <div class="header_sign_up__logo">
-    <span>JoinMe</span>
+    <span><%= link_to "JoinMe", root_path %></span>
   </div>
 </header>
 
 <div class="form">
+  
   <div class="form__header">
     <%= link_to 'Sign Up', sign_up_path, class: "form__header--signup" %>
     <%= link_to 'Sign In', login_path, class: "form__header--signin" %>
   </div>
-  <%= simple_form_for @user, url: '/sign_up', html: { multipart: true }  do |f| %>
 
+  <div class="form__title">
+    <h3>Create your account</h3>
+    <span>Bring the best events with your family and friends.</span>
+  </div>
+  
+  <%= simple_form_for @user, url: '/sign_up', html: { multipart: true, class: "form__body" }  do |f| %>
+    <div class="form__input">
+      <%= f.input :name, placeholder: "First Name", label: false %>
+    </div>
 
+    <div class="form__input">
+      <%= f.input :email, placeholder: "Emails Address", label: false %>
+    </div>
 
+    <div class="form__input">
+      <%= f.input :password, placeholder: "Password", label: false %>
+      <%= f.input :password_confirmation, placeholder: "Confirm Password", label: false %>
+    </div>
+
+    <div class="form__input">
+      <%= f.submit 'Sign Up' %>
+    </div>
   <% end %>
 </div>

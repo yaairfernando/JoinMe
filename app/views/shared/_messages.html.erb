@@ -1,0 +1,7 @@
+<% if flash.any? %>
+  <% flash.each do |name, msg| %>
+    <div class='message <%="#{name}"%>' >
+      <span><%= msg %></span>
+    </div>
+  <% end %>
+<% end %>

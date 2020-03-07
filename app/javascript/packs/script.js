@@ -15,17 +15,13 @@ const signIn = document.querySelector('#sign-in')
 // }
 
 
-// $(() => $('#sign-in').bind("ajax:beforeSend", function(){
+// $(() => $('#sign-up').bind("ajax:beforeSend", function(){
 // }).bind("ajax:success", function(event){
-//     const signIn = document.querySelector('#sign-in')
-//     console.log(signIn.parentNode.nextElementSibling)
+//     console.log(event.originalEvent.detail)
+//     $('.form__container').html(event.originalEvent.detail[0].html) 
+//     const signIn = document.querySelector('#sign-up')
+//     console.log(signIn)
 //     console.log(event)
-//     $('.form__container').html(`<%= j render :partial => 'sessions/new' %>`)
-
-//     // if(event.originalEvent.detail[0].data.length === 0) {
-//     //   console.log("jfjfj")
-//     // }
-//     // $('.content_custom_event').html(event.originalEvent.detail[0].html) 
 //   }).bind('ajax:complete', function(event){
 //     console.log(event)
 //   }).bind("ajax:error", function(event){

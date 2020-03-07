@@ -1,4 +1,3 @@
-<%= javascript_pack_tag 'script' %>
 
 <header class="header_sign_up">
   <div class="header_sign_up__logo">
@@ -9,7 +8,7 @@
 <div class="form">
   
   <div class="form__header">
-    <%= link_to 'Sign Up', sign_up_path, class: "form__header--signup", id: "sign-up" %>
+    <%= link_to 'Sign Up', sign_up_path, class: "form__header--signup", id: "sign-up", remote: true %>
     <%= link_to 'Sign In', login_path, class: "form__header--signin", id: "sign-in", remote: true %>
   </div>
 
@@ -23,18 +22,18 @@
       <div class="form__input">
         <%= f.input :name, placeholder: "First Name", label: false %>
       </div>
-  
+    
       <div class="form__input">
         <%= f.input :email, placeholder: "Emails Address", label: false %>
       </div>
-  
+    
       <div class="form__input">
         <%= f.input :password, placeholder: "Password", label: false %>
         <%= f.input :password_confirmation, placeholder: "Confirm Password", label: false %>
       </div>
-  
+    
       <span class="form__terms">By clicking sign up, you agree our <%= link_to 'Terms of use', "" %> and <%= link_to 'Privacy Policy', "" %></span>
-  
+    
       <div class="form__input">
         <%= f.submit 'Sign Up' %>
       </div>

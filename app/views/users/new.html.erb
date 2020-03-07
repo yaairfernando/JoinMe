@@ -1,0 +1,17 @@
+<header class="header_sign_up">
+  <div class="header_sign_up__logo">
+    <span>JoinMe</span>
+  </div>
+</header>
+
+<div class="form">
+  <div class="form__header">
+    <%= link_to 'Sign Up', sign_up_path, class: "form__header--signup" %>
+    <%= link_to 'Sign In', login_path, class: "form__header--signin" %>
+  </div>
+  <%= simple_form_for @user, url: '/sign_up', html: { multipart: true }  do |f| %>
+
+
+
+  <% end %>
+</div>

@@ -24,6 +24,7 @@
  $color-purple: #551A8B;
  $color-input-grey: #96a0aa;
  $color-active-white: #fafbfc;
+ $color-red: #F04546;
 
 *,
 *::after,
@@ -362,6 +363,14 @@ h1 {
   }
 }
 
-.danger {
-  background-color: #F04546;
+.log_in_danger {
+  background-color: $color-red;
+}
+
+.log_in_success {
+  background-color: rgba($color-ligth-purple, 0.8);
+}
+
+.sign_up_success {
+  background-color: $color-purple;
 }

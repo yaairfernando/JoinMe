@@ -1,12 +1,14 @@
 class UsersController < ApplicationController
   def new
+    redirect_to root_path unless !logged_in?
     @user = User.new
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "Thanks for loggin in!!"
+      log_in @user
+      flash[:sign_up_success] = "Thanks for signing in!!"
       redirect_to root_path
     else
       render :new

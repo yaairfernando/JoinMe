@@ -23,6 +23,7 @@
  $color-gray: #7d97ad;
  $color-purple: #551A8B;
  $color-input-grey: #96a0aa;
+ $color-active-white: #fafbfc;
 
 *,
 *::after,
@@ -254,6 +255,24 @@ h1 {
       color: $color-gray;
       text-decoration: none;
       padding: 2.4rem 0;
+      display: inline-block;
+      width: 50%;
+      text-align: center;
+    }
+
+    .active {
+      background: $color-active-white;
+      border-bottom: 1px solid $color-light-white;
+      font-weight: 600;
+      color: $color-gray;
+    }
+
+    .active--sign-up {
+      border-right: 1px solid $color-light-white;
+    }
+
+    .active--sign-in {
+      border-left: 1px solid $color-light-white;
     }
   }
 
@@ -321,4 +340,28 @@ h1 {
     }
   }
 
+}
+
+
+// MESSAGES
+
+.message {
+  margin: 0 auto;
+  margin-top: 2rem;
+  text-align: center;
+  height: 60px;
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  
+  span {
+    color: #fff;
+    font-size: 1.7rem;
+  }
+}
+
+.danger {
+  background-color: #F04546;
 }

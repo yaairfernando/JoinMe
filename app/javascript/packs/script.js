@@ -2,39 +2,26 @@ import $ from "jquery";
 
 const signUp = document.querySelector('#sign-up')
 const signIn = document.querySelector('#sign-in')
- 
-// eventListeners()
-// function eventListeners() {
-//   if (signUp) {
-//     signUp.addEventListener('click', addActiveClass)
-//   }
 
-//   if (signIn) {
-//     signIn.addEventListener('click', addActiveClassSignIn)
-//   }
-// }
+$(() => {
+  if ($('.message').length) {
+    setInterval(() => {
+      $('.message').attr('style', 'display: none');
+    }, 4000)
+  }
+})
+
+$(() => $('.form__header--signup').click(() => toggleClassSignUp()))
+$(() => $('.form__header--signin').click(() => toggleClassSignIn()))
 
 
-// $(() => $('#sign-up').bind("ajax:beforeSend", function(){
-// }).bind("ajax:success", function(event){
-//     console.log(event.originalEvent.detail)
-//     $('.form__container').html(event.originalEvent.detail[0].html) 
-//     const signIn = document.querySelector('#sign-up')
-//     console.log(signIn)
-//     console.log(event)
-//   }).bind('ajax:complete', function(event){
-//     console.log(event)
-//   }).bind("ajax:error", function(event){
-//     console.log(event)
-//   })
-// )
+function toggleClassSignUp() {
+  $('.form__header--signup').addClass('active active--sign-up')
+  $('.form__header--signin').removeClass('active active--sign-in')
+}
 
-// function addActiveClass() {
-//   signUp.classList.add("active")
-//   // signIn.classList.remove("active")
-// }
-
-// function addActiveClassSignIn() {
-//   signIn.classList.add("active")
-//   signUp.classList.remove("active")
-// }
+function toggleClassSignIn() {
+  $('.form__header--signup').removeClass('active active--sign-up')
+  $('.form__header--signin').addClass('active active--sign-in')
+}
+  

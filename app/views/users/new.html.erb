@@ -1,4 +1,4 @@
-
+<%= javascript_pack_tag 'script' %>
 <header class="header_sign_up">
   <div class="header_sign_up__logo">
     <span><%= link_to "JoinMe", root_path %></span>
@@ -17,6 +17,8 @@
       <h3>Create your account</h3>
       <span>Bring the best events with your family and friends.</span>
     </div>
+
+    <%= render "shared/messages" %>
     
     <%= simple_form_for @user, url: '/sign_up', html: { multipart: true, class: "form__body" }  do |f| %>
       <div class="form__input">
@@ -35,7 +37,7 @@
       <span class="form__terms">By clicking sign up, you agree our <%= link_to 'Terms of use', "" %> and <%= link_to 'Privacy Policy', "" %></span>
     
       <div class="form__input">
-        <%= f.submit 'Sign Up' %>
+        <%= f.submit 'Sign Up', class: "form__sign-up-input" %>
       </div>
     <% end %>
   </div>

@@ -1,0 +1,39 @@
+
+<header class="header_sign_up">
+  <div class="header_sign_up__logo">
+    <span><%= link_to "JoinMe", root_path %></span>
+  </div>
+</header>
+
+<div class="form">
+
+  <div class="form__title">
+    <h3>Create your event</h3>
+    <span>Enjoy you life with sharing awesome events!!!.</span>
+  </div>
+  
+  <%= simple_form_for @event, html: { multipart: true, class: "form__body" }  do |f| %>
+    <div class="form__input">
+      <%= f.input :title, placeholder: "Enter title", label: false %>
+    </div>
+  
+    <div class="form__input">
+      <%= f.input :location, placeholder: "Enter Location", label: false %>
+    </div>
+  
+    <div class="form__input">
+      <%= f.input :date, as: :datetime, placeholder: "Enter Date", label: false %>
+    </div>
+  
+    <div class="form__input">
+      <%= f.input :description, placeholder: "Enter Description", label: false %>
+    </div>
+  
+    <span class="form__terms">By clicking sign up, you agree our <%= link_to 'Terms of use', "" %> and <%= link_to 'Privacy Policy', "" %></span>
+  
+    <div class="form__input">
+      <%= f.submit 'Sign In', class: "form__sign-in-input" %>
+    </div>
+  <% end %>
+</div>
+

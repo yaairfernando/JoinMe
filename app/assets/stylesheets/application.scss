@@ -304,15 +304,17 @@ h1 {
       margin-bottom: 2rem;
     }
 
-    input {
+    input,
+    textarea {
       width: 100%;
       padding: 2rem;
       border-radius: 0.6rem;
       border: 1px solid $color-input-grey;
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       font-weight: 100;
       outline: 0 none;
       color: $color-light-gray;
+      font-family: 'Lato', sans-serif;
     }
 
     input:focus {

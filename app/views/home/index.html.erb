@@ -10,6 +10,24 @@
       <span class="slogan--sec">only with one click!</span>
     </h1>
 
-    <%= link_to 'Sign Up', sign_up_path, class: "btn btn--white btn--animated", id: "sign-up" %>
+    <% if logged_in? %>
+      <%= link_to 'Host a new Event', new_event_path, class: "btn btn--white btn--animated", id: "sign-up" %>
+    <% else %>
+      <%= link_to 'Sign Up', sign_up_path, class: "btn btn--white btn--animated", id: "sign-up" %>
+    <% end %>
   </div>
 </header>
+
+<section class="section-events">
+  <div class="u-center-text u-margin-bottom-big">
+    <h2 class="neading-secondary bg-success">Excitions events for successful people</h2>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">ONDE</div>
+      <div class="col-md-6">TWOOOO</div>
+    </div>
+
+  </div>
+</section>

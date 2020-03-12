@@ -24,4 +24,8 @@ function toggleClassSignIn() {
   $('.form__header--signup').removeClass('active active--sign-up')
   $('.form__header--signin').addClass('active active--sign-in')
 }
-  
+
+setTimeout(() => {
+  const carousel = document.querySelector('.carousel-inner');
+  carousel.firstElementChild.className = 'carousel-item active'
+}, 200)

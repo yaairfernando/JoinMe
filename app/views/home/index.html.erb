@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'script' %>
 <%= render "shared/messages" %>
 <header class="header">
   <div class="header__logo">
@@ -41,18 +42,12 @@
     <div class="col-md-6">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <h3 class="d-block w-100"><%= @event.title %></h3>
-            <span><%= @event.location %></span>
-            <span><%= @event.creator.name %></span>
-            <span><%= @event.date %></span>
-          </div>
           <% @events.each do |event| %>
             <div class="carousel-item">
               <h3 class="d-block w-100"><%= event.title %></h3>
               <span><%= event.location %></span>
               <span><%= event.creator.name %></span>
-              <span><%= event.date %></span>
+              <span><%=TimeDifference.between(DateTime.now, event.date).humanize %></span>
             </div>
           <% end %>
         </div>

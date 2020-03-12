@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  atendee_id: 1
+  event_id: 1
+  accepted: false
+
+two:
+  atendee_id: 1
+  event_id: 1
+  accepted: false

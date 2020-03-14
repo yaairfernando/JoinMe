@@ -10,18 +10,16 @@
         This event will start in:
       </small>
       <small>
-        <span class="label label-info"> <%= TimeDifference.between(event.date, DateTime.now).humanize %></span>
+        <span class="badge badge-info"> <%= TimeDifference.between(event.date, DateTime.now).humanize %></span>
       </small>
       <% else %>
         <small>
-          <span class="label label-danger">Passed Event!</span>
+          <span class="badge badge-danger">Passed Event!</span>
         </small>
       <% end %>
     </div>
   </div>
   
-  
-
   <div class="details-event">
     <div class="title">
       <p><%= event.title %></p>
@@ -30,21 +28,22 @@
       <div class="event-details">
         <p>
           <i class="far fa-thumbs-up"></i>
+          <i class="fas fa-map-marker-alt"></i>
           <%= event.location %>
         </p>
         <p class="description"><%= event.description %></p>
-        <span class="label label-danger"><%= pluralize(event.invitations.where(accepted: true).count, "person") %> are attending to this event!</span>
+        <span class="badge badge-danger"><%= pluralize(event.invitations.where(accepted: true).count, "person") %> are attending to this event!</span>
         <% if logged_in? && current_user.id != event.creator_id %>
           <% if current_user.attended_events.any?%>
             <% if current_user.attended_events.ids.include? event.id && !@accepted_button%>
-              <span class="label label-success">Attending</span>
+              <span class="badge badge-success">Attending</span>
             <% end %>
           <% end %>
         <% end %>
         <% if logged_in? && current_user.id == event.creator_id %>
-        <span class="label label-success"><%= event.creator.name %>, you are hosting this event!!</span>
+        <span class="badge badge-success"><%= event.creator.name %>, you are hosting this event!!</span>
         <% else %>
-          <span class="label label-primary"><%= event.creator.name %> is the host</span>
+          <span class="badge badge-primary"><%= event.creator.name %> is the host</span>
         <% end %>
       </div>
       <div class="button-details">

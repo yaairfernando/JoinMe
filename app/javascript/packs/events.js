@@ -8,13 +8,13 @@ setTimeout(() => {
 
 
 function upcoming() {
-  let upcoming = document.getElementById("upcomingEvents");
-  animateScrollTo(upcoming,{maxDuration: 4000});
+  let upcoming = document.getElementById("upcoming-events");
+  animateScrollTo(upcoming,{minDuration: 3000});
 }
 
 function passed() {
-  let passed = document.getElementById("passedEvents");
-  animateScrollTo(passed, {maxDuration: 4000})
+  let passed = document.getElementById("passed-events");
+  animateScrollTo(passed, {minDuration: 3000})
 }
-$(() => $("#up_coming").on("click", () => upcoming()));
-$(() => $("#passed").on("click", () => passed()));
+$(() => $("#up_coming").on("mouseover", () => upcoming()));
+$(() => $("#passed").on("mouseover", () => passed()));

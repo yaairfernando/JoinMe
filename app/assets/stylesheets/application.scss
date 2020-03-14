@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+ /* @import "bootstrap/scss/bootstrap"; */
  
  @import 'bootstrap/scss/bootstrap';
  @import 'bootstrap/scss/bootstrap';
@@ -224,8 +224,11 @@ h1 {
     transition: all 0.2s;
     text-align: center;
     color: $color-white;
+    height: 35rem;
+    transform: skewX(5deg);
 
     &:hover {
+      transform: skewX(12deg);
       outline: 0.5rem solid $color-dark-purple;
       transform: scale(1.03) translateY(-.5rem);
       box-shadow: 0 2.5rem 4rem rgba(0,0,0,0.5);
@@ -236,9 +239,21 @@ h1 {
       height: 100%;
       display: flex;
       align-items: center;
+      transform: skewX(-5deg);
+    }
 
-      &-item {
-        margin: 0 auto;
+    &-item {
+      margin: 0 auto;
+
+      & > h3 {
+        font-size: 2.5rem;
+      }
+
+      & > span {
+        display: block;
+        font-size: 1.3rem;
+        color: $color-white;
+        font-weight: 700;
       }
     }
   }
@@ -305,6 +320,11 @@ h1 {
       display: inline-block;
       width: 50%;
       text-align: center;
+
+      &:hover {
+        text-decoration: none;
+        color: $color-gray;
+      }
     }
 
     .active {
@@ -364,7 +384,7 @@ h1 {
     }
 
     input:focus {
-      border: 3px solid $color-purple;
+      border: 2px solid $color-purple;
     }
 
     input[type="submit"] {
@@ -466,4 +486,10 @@ h1 {
 .max1400 { 
   max-width: 140rem;
   margin: 0 auto;
+}
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
 }

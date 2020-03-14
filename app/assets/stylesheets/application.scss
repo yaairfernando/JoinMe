@@ -15,8 +15,13 @@
  */
  /* @import "bootstrap/scss/bootstrap"; */
  
- @import 'bootstrap/scss/bootstrap';
- @import 'bootstrap/scss/bootstrap';
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap/scss/bootstrap';
 
  $color-light-gray: #777;
  $color-grey-light-1: #f7f7f7;
@@ -255,6 +260,51 @@ h1 {
         color: $color-white;
         font-weight: 700;
       }
+    }
+  }
+}
+
+// SECTION UPCOMING AND PASSED EVENTS
+.section-all-events {
+  background-color: $color-grey-light-1;
+
+  .navegation {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    height: 4rem;
+    display: flex;
+    background-image: linear-gradient(to right, rgba($color-ligth-purple, 0.8), 
+    rgba($color-dark-purple, 0.7));
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  
+    a {
+      color: #fff;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 10px;
+      font-family: 'Raleway', sans-serif;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      text-transform: uppercase;
+  
+      &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: $color-grey-light-1;
+        color: $color-dark-purple;
+      }
+    }
+  }
+}
+.main_events {
+  #passedEvents,
+  #upcomingEvents {
+    padding-top: 30px;
+    h2 {
+      margin-top: 20px;
     }
   }
 }

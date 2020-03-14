@@ -67,16 +67,24 @@
 </section>
 
 <section class="section-all-events">
-  <div class="navegation">
-    <%= link_to 'Upcoming Events', '#', id: "upcoming" %>
-    <%= link_to 'Passed Events', '#', id: "passed" %>
-  </div>
-
-  <div class="upcoming-events">
-
-  </div>
-
-  <div class="passed-events">
-
+  <div class="row max1400">
+    <div class="navegation u-center-text u-margin-bottom-big">
+      <%= link_to 'Upcoming Events', '#', id: "upcoming" %>
+      <%= link_to 'Passed Events', '#', id: "passed" %>
+    </div>
+  
+    <div class="main-events">
+      <div id="upcoming-events">
+        <h2>Upcoming Events</h2>
+        <%= will_paginate @upcoming_events, param_name: "upcoming_page" %>
+        <%= render @upcoming_events.includes(:creator, :attendees, :invitations) %>
+      </div>
+    
+      <div id="passed-events">
+        <h2>Passed Events</h2>
+        <%= will_paginate @passed_events, param_name: "passed_page" %>
+        <%= render @passed_events.includes(:creator, :attendees, :invitations) %>
+      </div>
+    </div>
   </div>
 </section>

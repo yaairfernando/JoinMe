@@ -2,6 +2,10 @@
   <div class="popup__left">
   </div>
   <div class="popup__right">
+    
+    <%= link_to root_path, class: 'popup__close'  do %>
+      <i class="fas fa-times"></i>
+    <% end %>
     <div class="show_event">
       <div class="show_event--header">
         <h2>
@@ -20,7 +24,7 @@
       </div>
     </div>
     <% if logged_in? && current_user.id == @event.creator_id %>
-      <span class="badge badge-success">You have <%= @event.invitations.where(accepted: false).count %> invitations pending... </span>
+      <span class="badge badge-primary badge-primary-invitations">You have <%= @event.invitations.where(accepted: false).count %> invitations pending... </span>
     <% end %>
     <br>
     <br>

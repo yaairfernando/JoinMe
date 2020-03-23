@@ -37,6 +37,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
  $color-red: #F04546;
  $color-purple-2: #7510f7;
  $color-grey-light-2: #eee;
+ $color-grey-dark: #777;
 
  // mixings
 
@@ -649,6 +650,26 @@ h1 {
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    border-left: 2px solid $color-purple-2;
+
+    & > .popup__close {
+      &:link,
+      &:visited {
+          color: $color-grey-dark;
+          position: absolute;
+          top: 2.5rem;
+          right: 2.5rem;
+          font-size: 2rem;
+          text-decoration: none;
+          display: inline-block;
+          transition: all .2s;
+          line-height: 1;
+      }
+
+      &:hover {
+          color: $color-purple;
+      }
+    }
     
     .show_event {
       padding-bottom: 1rem;
@@ -665,6 +686,12 @@ h1 {
     .body {
       font-size: 1.7rem;
 
+      & > p {
+        & > i {
+          color: $color-purple-2;
+        }
+      }
+
       .description {
         column-count: 2;
         column-gap: 4rem;
@@ -673,7 +700,11 @@ h1 {
     }
 
     .footer {
-      font-size: 1.2rem;
+      font-size: 2rem;
+    }
+
+    .badge-primary-invitations {
+      font-size: 1.5rem;
     }
   }
 

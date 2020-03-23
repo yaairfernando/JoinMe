@@ -1,35 +1,60 @@
 class EventsController < ApplicationController
-  def index
-  end
+  include EventsHelper
+  before_action :find_event, only: %i[show]
 
   def new
     @event = Event.new
   end
 
   def create
-    @event = current_user.events.new(event_params)
+    @event = current_user.events.build(event_params)
+    event_days_to_start @event
     if @event.save
+      flash[:success] = "Congrats!! #{current_user.name}, your event will start in #{@days} days!!!.."
       redirect_to root_path
     else
       render :new
     end
   end
 
-  def show
+  def invite
+    @event = Event.find_by(id: params[:id])
+    @invitation = Invitation.new(attendee_id: params[:user_id], event_id: params[:id])
+    attendee = User.find_by(id: params[:user_id])
+
+    if @invitation.save
+      flash[:success] = "Great!! #{attendee.name} has recieved your invitation to this event."
+    else
+      flash[:danger] = 'There was an error trying to add a new guest to your event!!!'
+    end
+
+    redirect_to event_path(@event)
   end
 
-  def edit
+  def attend
+    @invitation = Invitation.find_by(attendee_id: current_user.id, event_id: params[:id])
+
+    if @invitation.update(accepted: true)
+      flash[:success] = "Congrats #{current_user.name}, you are attending to this event!!.. #{@invitation.event.name} hosted by #{@invitation.event.creator.name}"
+      redirect_to invited_events_path
+    else
+      render event_path(@event)
+    end
   end
 
-  def update
-  end
-
-  def destroy
-  end
+  def show; end
 
   private
 
   def event_params
     params.require(:event).permit(:location, :date, :description, :title)
+  end
+
+  def find_event
+    @event = Event.find(params[:id])
+  end
+
+  def load_current_user
+    User.includes(:attended_events, :invitations, :events) if logged_in?
   end
 end

@@ -614,6 +614,11 @@ h1 {
 
 // POPUP
 
+.popup-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .popup {
   height: 100%;
   width: 100%;
@@ -622,6 +627,7 @@ h1 {
   left: 0;
   background-color: rgba($color-black, .8);
   z-index: 2001;
+  padding: 3rem;
 
   &__content {
     @include absCenter;
@@ -643,6 +649,32 @@ h1 {
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    
+    .show_event {
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #999;
+
+      &--header > h2 {
+        font-size: 3rem;
+        font-weight: 100;
+        letter-spacing: 2px;
+      }
+    }
+
+    .body {
+      font-size: 1.7rem;
+
+      .description {
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 1px solid #eee;
+      }
+    }
+
+    .footer {
+      font-size: 1.2rem;
+    }
   }
 
   &__img {

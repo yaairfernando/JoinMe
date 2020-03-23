@@ -48,7 +48,7 @@
       </div>
       <div class="button-details">
         <% unless @accepted_button %>
-          <%= link_to "See Details", event_path(event) %>
+          <%= link_to "See Details", event_path(event), remote: true %>
         <% end %>
         <% if @accepted_button %>
           <%= link_to "Accept event invitation", attend_event_path(event), class: 'event_button', method: :get %>

@@ -42,7 +42,14 @@ class EventsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    respond_to do |format|
+      format.html # show.html.erb
+      format.js # show.js.erb
+      format.json { render json: @event }
+    end
+    # byebug
+  end
 
   private
 

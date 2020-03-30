@@ -14,10 +14,8 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:log_in_danger] = "The email or password you enter is invalid"
-      # redirect_to sign_up_path
       respond_to do |format|
         format.json do
-          # byebug
           if request.xhr?
             render :json => {:success => true, :errors => flash }
           end

@@ -20,18 +20,20 @@ class EventsController < ApplicationController
   end
 
   def invite
-    byebug
     @event = Event.find_by(id: params[:id])
-    @invitation = Invitation.new(attendee_id: params[:user_id], event_id: params[:id])
+    @invitation = Invitation.find_or_create_by(attendee_id: params[:user_id], event_id: params[:id])
     attendee = User.find_by(id: params[:user_id])
+    flash[:success] = "Great!! #{attendee.name} has recieved your invitation to this event."
 
-    if @invitation.save
-      flash[:success] = "Great!! #{attendee.name} has recieved your invitation to this event."
-    else
-      flash[:danger] = 'There was an error trying to add a new guest to your event!!!'
+    respond_to do |format|
+      format.json do
+        if request.xhr?
+          render :json => {:success => true, :data => flash }
+        end
+      end
+ 
+      format.html {   }
     end
-
-    redirect_to event_path(@event)
   end
 
   def attend
@@ -40,8 +42,6 @@ class EventsController < ApplicationController
     if @invitation.update(accepted: true)
       flash[:success] = "Congrats #{current_user.name}, you are attending to this event!!.. #{@invitation.event.title} hosted by #{@invitation.event.creator.name}"
       redirect_to invited_events_path
-    else
-      render event_path(@event)
     end
   end
 

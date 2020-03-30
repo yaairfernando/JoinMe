@@ -31,6 +31,7 @@ gem 'simple_form'
 gem 'time_difference'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
+gem 'hirb'
 
 group :production, :development, :test do
   gem 'cloudinary'

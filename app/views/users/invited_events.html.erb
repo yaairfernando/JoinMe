@@ -1,8 +1,11 @@
 <div class="container invitations">
   <br/>
   <%= render 'shared/header' %>
+  <%= render 'shared/messages' %>
   <% if @invited_events.any? %>
-    <%= render @invited_events %>
+    <div class="invitations__event">
+      <%= render @invited_events %>
+    </div>
   <% else %>
     <div class="alert alert-info alert-dismissible show" role="alert">
       <button type="button" id="close" class="close" data-dismiss="alert" aria-label="Close">
@@ -16,3 +19,5 @@
     </div>
   <% end %>
 </div>
+
+

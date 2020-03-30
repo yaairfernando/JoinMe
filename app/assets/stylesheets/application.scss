@@ -478,141 +478,147 @@ h1 {
       }
     }
   
-    .events {
-      font-family: 'Raleway', sans-serif;
-      height: 370px;
-      box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
-      margin-bottom: 20px;
+  }
+}
+
+.events {
+  font-family: 'Raleway', sans-serif;
+  height: 370px;
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+
+  &:hover .date-host__details {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(0);
+  }
+
+  &:hover .date-host > img {
+    transform: scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+
+  .date-host {
+    background-color: #1C2331;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    height: 100%;
+    justify-content: center;
+    flex: 2;
+    align-items: center;
+    font-size: 25px;
+    border-right: 3px solid #3273C5;
+    position: relative;
+
+    &__details {
+      backface-visibility: hidden;
+      z-index: 1;
+      transform: translate(0%, 170%);
+      opacity: 0;
+      transition: all 0.4s;
+    }
+
+
+    strong {
+      text-align: center;
+    }
+
+    .date-start {
+      text-align: center;
+      font-size: 17px;
       display: flex;
-      align-items: center;
-    
-      &:hover .date-host__details {
-        opacity: 1;
-        z-index: 2;
-        transform: translateY(0);
-      }
+      flex-direction: column;  
+    }
 
-      &:hover .date-host > img {
-        transform: scale(1);
-        filter: blur(3px) brightness(80%);
-      }
+    & > img {
+      vertical-align: middle;
+      border-style: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: scale(1.3);
+      transition: all 0.4s;
+    }
+  }
 
-      .date-host {
-        background-color: #1C2331;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        color: #fff;
-        height: 100%;
-        justify-content: center;
-        flex: 2;
-        align-items: center;
-        font-size: 25px;
-        border-right: 3px solid #3273C5;
-        position: relative;
+  .details-event {
+    flex: 4;
+    padding: 10px 20px;
 
-        &__details {
-          backface-visibility: hidden;
-          z-index: 1;
-          transform: translate(0%, 170%);
-          opacity: 0;
-          transition: all 0.4s;
-        }
+    .title {
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      height: 25%;
+      align-items: flex-end;
+      display: flex;
+      border-bottom: 1px solid rgba(0,0,0,0.2);
+    }
 
-    
-        strong {
-          text-align: center;
-        }
-    
-        .date-start {
-          text-align: center;
-          font-size: 17px;
+    .details {
+      display: flex;
+      flex-direction: column;
+      height: 75%;
+      padding: 20px 0;
+      justify-content: space-between;
+
+      .event-details {
+        margin-bottom: 10px;
+
+        p {
           display: flex;
-          flex-direction: column;  
-        }
-
-        & > img {
-          vertical-align: middle;
-          border-style: none;
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          transform: scale(1.3);
-          transition: all 0.4s;
-        }
-      }
-    
-      .details-event {
-        flex: 4;
-        padding: 10px 20px;
-    
-        .title {
-          font-size: 20px;
-          font-weight: 400;
-          letter-spacing: 3px;
-          height: 25%;
-          align-items: flex-end;
-          display: flex;
-          border-bottom: 1px solid rgba(0,0,0,0.2);
-        }
-    
-        .details {
-          display: flex;
-          flex-direction: column;
-          height: 75%;
-          padding: 20px 0;
-          justify-content: space-between;
-    
-          .event-details {
-            margin-bottom: 10px;
-    
-            p {
-              display: flex;
-              align-items: center;
-      
-              i {
-                font-size: 25px;
-                padding: 0 5px;
-              }
-            }
-    
-            p.description {
-              font-size: 1.6rem;
-              margin-left: 6px;
-              font-family: lato;
-              text-align: justify;
-            }
-          }
-    
-          a {
-            border: 2px solid #3273C5;
-            padding: 10px 10px;
-            width: 227px;
-            text-align: center;
-            display: inline-block;
-            transition: all 0.3s ease-in-out;
-            font-size: 16px;
-            font-weight: 500;
-    
-            &:hover {
-              text-decoration: none;
-              cursor: pointer;
-              background-color: #3273C5;
-              color: #fff;
-            }
+          align-items: center;
+  
+          i {
+            font-size: 25px;
+            padding: 0 5px;
           }
         }
-    
-        .button-details {
-          display: flex;
-          justify-content: start;
-    
-          a, p {
-            margin-right: 3px;
-          }
+
+        p.description {
+          font-size: 1.6rem;
+          margin-left: 6px;
+          font-family: lato;
+          text-align: justify;
         }
+
+        & > span {
+          font-size: 1.2rem;
+        }
+      }
+
+      a {
+        border: 2px solid #3273C5;
+        padding: 10px 10px;
+        width: 227px;
+        text-align: center;
+        display: inline-block;
+        transition: all 0.3s ease-in-out;
+        font-size: 16px;
+        font-weight: 500;
+        color: #3273C5;
+
+        &:hover {
+          text-decoration: none;
+          cursor: pointer;
+          background-color: #3273C5;
+          color: #fff;
+        }
+      }
+    }
+
+    .button-details {
+      display: flex;
+      justify-content: start;
+
+      a, p {
+        margin-right: 3px;
       }
     }
   }
@@ -868,8 +874,32 @@ h1 {
       text-transform: uppercase;
 
       & > span {
-        font-size: 1.2rem;
-        padding: .5rem 1.5rem;
+        font-size: 1.5rem;
+        padding: .5rem 1.2rem;
+      }
+    }
+
+    .invite-people {
+      text-align: center;
+      padding: 2rem;
+
+      & > h4 {
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      &-item {
+        &,
+        &:hover,
+        &:active {
+          text-decoration: none;
+          background: #007bff;
+          color: #fff;
+          padding: .2rem 1.2rem;
+          border-radius: 3px;
+          font-size: 1.5rem;
+          margin: 0 0.5rem;
+        }
       }
     }
     
@@ -942,6 +972,10 @@ h1 {
   height: calc(100vh - 60px);
   overflow-y: scroll;
 
+  &__event {
+    margin-top: 3rem;
+  }
+
   .alert-info {
     font-size: 1.8rem;
     text-align: center;
@@ -958,21 +992,27 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    
     & > h2 {
       margin-bottom: 2rem;
     }
-
+    
     & > a {
-      background: #007bff;
-      color: #fff;
-      border-radius: 0 1rem 4rem rgba(0,0,0,0.5);
-      padding: 1rem 2rem;
-      margin: 1rem;
-      display: inline-block;
-      border: none;
-      font-size: 2rem;
-      box-shadow: 0 0.3rem 2rem rgba(0,0,0,0.6);
+      &,
+      &:link,
+      &:active,
+      &:hover {
+        text-decoration: none;
+        background: #007bff;
+        color: #fff;
+        border-radius: 0 1rem 4rem rgba(0,0,0,0.5);
+        padding: 1rem 2rem;
+        margin: 1rem;
+        display: inline-block;
+        border: none;
+        font-size: 2rem;
+        box-shadow: 0 0.3rem 2rem rgba(0,0,0,0.6);
+      }
     }
   }
 }
@@ -990,8 +1030,15 @@ h1 {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  margin-bottom: 0.5rem;
   span {
     color: #fff;
+    font-size: 1.7rem;
+  }
+
+  .invite {
+    color: #999;
+    font-weight: 500;
     font-size: 1.7rem;
   }
 }
@@ -1008,6 +1055,10 @@ h1 {
   right: 6rem;
   z-index: 3;
   background-color: rgba(200,200,200, 0.5);
+}
+
+.success {
+  background-color: #007BFF;
 }
 
 .sign_up_success {

@@ -32,6 +32,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
  $color-light-white: #dbe2e8;
  $color-gray: #7d97ad;
  $color-purple: #551A8B;
+ $color-purple-2: #007bff;
  $color-input-grey: #96a0aa;
  $color-active-white: #fafbfc;
  $color-red: #F04546;
@@ -627,6 +628,7 @@ h1 {
         letter-spacing: -.7rem;
         line-height: 1.7;
         font-weight: 500;
+        color: $color-purple-2;
       }
 
       a:active {
@@ -635,6 +637,7 @@ h1 {
 
       a:hover {
         cursor: pointer;
+        color: $color-purple-2;
       }
     }
   }
@@ -921,12 +924,19 @@ h1 {
 .message {
   margin: 0 auto;
   margin-top: 2rem;
+  padding: 2rem 3rem;
   text-align: center;
   height: 60px;
-  width: 75%;
+  /* width: 75%; */
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 3px;
+  position: absolute;
+  top: 14rem;
+  right: 6rem;
+  text-transform: uppercase;
+  z-index: 3;
   
   
   span {
@@ -940,7 +950,7 @@ h1 {
 }
 
 .log_in_success {
-  background-color: rgba($color-ligth-purple, 0.8);
+  background-color: rgba(200,200,200,0.5);
 }
 
 .sign_up_success {

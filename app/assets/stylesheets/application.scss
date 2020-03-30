@@ -927,18 +927,10 @@ h1 {
   padding: 2rem 3rem;
   text-align: center;
   height: 60px;
-  /* width: 75%; */
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 3px;
-  position: absolute;
-  top: 14rem;
-  right: 6rem;
   text-transform: uppercase;
-  z-index: 3;
-  
-  
   span {
     color: #fff;
     font-size: 1.7rem;
@@ -946,11 +938,17 @@ h1 {
 }
 
 .log_in_danger {
+  width: 75%;
   background-color: $color-red;
 }
 
 .log_in_success {
-  background-color: rgba(200,200,200,0.5);
+  border-radius: 3px;
+  position: absolute;
+  top: 14rem;
+  right: 6rem;
+  z-index: 3;
+  background-color: rgba(200,200,200, 0.5);
 }
 
 .sign_up_success {

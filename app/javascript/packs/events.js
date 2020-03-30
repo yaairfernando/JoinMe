@@ -3,7 +3,9 @@ import animateScrollTo from "animated-scroll-to";
 
 setTimeout(() => {
   const carousel = document.querySelector('.carousel-inner');
-  carousel.firstElementChild.className = 'carousel-item active'
+  if (carousel.firstElementChild) {
+    carousel.firstElementChild.className = 'carousel-item active'
+  }
 }, 200)
 
 

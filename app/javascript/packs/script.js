@@ -7,7 +7,7 @@ $(() => {
   if ($('.message').length) {
     setInterval(() => {
       $('.message').attr('style', 'display: none');
-    }, 3000)
+    }, 5000)
   }
 })
 

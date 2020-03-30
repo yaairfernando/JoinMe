@@ -1,0 +1,18 @@
+development:
+  cloud_name: dmlx2xvko
+  api_key: '735151451245217'
+  api_secret: 3GaHgIF8ODShqYBKdRBmDphMbRo
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dmlx2xvko
+  api_key: '735151451245217'
+  api_secret: 3GaHgIF8ODShqYBKdRBmDphMbRo
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dmlx2xvko
+  api_key: '735151451245217'
+  api_secret: 3GaHgIF8ODShqYBKdRBmDphMbRo
+  enhance_image_tag: true
+  static_file_support: false

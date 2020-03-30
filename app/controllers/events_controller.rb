@@ -10,6 +10,8 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
     event_days_to_start @event
     if @event.save
+      @value = Cloudinary::Uploader.upload(params[:event][:image])
+      update_icon_url @value
       flash[:success] = "Congrats!! #{current_user.name}, your event will start in #{@days} days!!!.."
       redirect_to root_path
     else
@@ -48,13 +50,12 @@ class EventsController < ApplicationController
       format.js # show.js.erb
       format.json { render json: @event }
     end
-    # byebug
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:location, :date, :description, :title)
+    params.require(:event).permit(:location, :date, :description, :title, :image)
   end
 
   def find_event

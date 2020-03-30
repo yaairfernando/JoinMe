@@ -1,23 +1,28 @@
 <div class="events">
   <div class="date-host">
-    <strong><%= event.date.strftime('%Y %b %d %I:%M%p') %></strong>
-    <% if @from_events_controller %>
-      <small><%= event.creator.name %></small>
-    <% end %>
-    <div class="date-start">
-      <% if event.date > DateTime.now %>
-      <small>
-        This event will start in:
-      </small>
-      <small>
-        <span class="badge badge-info"> <%= TimeDifference.between(event.date, DateTime.now).humanize %></span>
-      </small>
-      <% else %>
-        <small>
-          <span class="badge badge-danger">Passed Event!</span>
-        </small>
+    <div class="date-host__details">
+      <strong><%= event.date.strftime('%Y %b %d %I:%M%p') %></strong>
+      <% if @from_events_controller %>
+        <small><%= event.creator.name %></small>
       <% end %>
+      <div class="date-start">
+          <% if event.date > DateTime.now %>
+            <small>
+              This event will start in:
+            </small>
+            <h4>
+              <span class="badge badge-info"> <%= TimeDifference.between(event.date, DateTime.now).in_days.round %> days</span>
+            </h4>
+          <% else %>
+            <small>
+              <span class="badge badge-danger">Passed Event!</span>
+            </small>
+          <% end %>
+      </div>
     </div>
+    <% if event.image? %>
+      <img src="<%= event.image %>" alt="">
+    <%end%>
   </div>
   
   <div class="details-event">

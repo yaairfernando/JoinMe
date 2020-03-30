@@ -1,0 +1,17 @@
+<div class="container invitations">
+  <br/>
+  <% if @invited_events.any? %>
+    <%= render @invited_events %>
+  <% else %>
+    <div class="alert alert-info alert-dismissible show" role="alert">
+      <button type="button" id="close" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <p>You don't have invitations!!</p>
+    </div>
+    <div class="start-event-container">
+      <h2>Start new Events and invite your friends!!</h2>
+      <%= link_to 'Create a New Event', new_event_path, class: "create-event" %>
+    </div>
+  <% end %>
+</div>

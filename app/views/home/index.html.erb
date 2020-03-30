@@ -1,5 +1,19 @@
 <%= javascript_pack_tag 'events' %>
 <%= render "shared/messages" %>
+<div class="navigation">
+  <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+  <label for="navi-toggle" class="navigation__button">
+    <span class="navigation__icon">&nbsp;</span>
+  </label>
+
+  <div class="navigation__background">&nbsp;</div>
+
+  <nav class="navigation__nav">
+    <ul class="navigation__list">
+      <li class="navigation__item"><%=link_to 'Home', '#', class: 'navigation__link'%></li>
+    </ul>
+  </nav>
+</div>
 <header class="header">
   <div class="header__logo">
     <span>JoinMe</span>
@@ -67,26 +81,28 @@
 </section>
 
 <section class="section-all-events">
-  <div class="row max1400">
-    <div class="navegation u-center-text u-margin-bottom-big">
-      <%= link_to 'Upcoming Events', '#', id: "up_coming" %>
-      <%= link_to 'Passed Events', '#', id: "passed" %>
-    </div>
-  
-    <div class="main-events">
-      <div id="upcoming-events">
-        <h2>Upcoming Events</h2>
-        <%= will_paginate @upcoming_events, param_name: "upcoming_page" %>
-        <%= render @upcoming_events.includes(:creator, :attendees, :invitations) %>
+  <% if @upcoming_events.count != 0 || @passed_events.count != 0 %>
+    <div class="row max1400">
+      <div class="navegation u-center-text u-margin-bottom-big">
+        <%= link_to 'Upcoming Events', '#', id: "up_coming" %>
+        <%= link_to 'Passed Events', '#', id: "passed" %>
       </div>
     
-      <div id="passed-events">
-        <h2>Passed Events</h2>
-        <%= will_paginate @passed_events, param_name: "passed_page" %>
-        <%= render @passed_events.includes(:creator, :attendees, :invitations) %>
+      <div class="main-events">
+        <div id="upcoming-events">
+          <h2>Upcoming Events</h2>
+          <%= will_paginate @upcoming_events, param_name: "upcoming_page" %>
+          <%= render @upcoming_events.includes(:creator, :attendees, :invitations) %>
+        </div>
+        
+        <div id="passed-events">
+          <h2>Passed Events</h2>
+          <%= will_paginate @passed_events, param_name: "passed_page" %>
+          <%= render @passed_events.includes(:creator, :attendees, :invitations) %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </section>
 
 

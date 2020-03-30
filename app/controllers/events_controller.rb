@@ -20,6 +20,7 @@ class EventsController < ApplicationController
   end
 
   def invite
+    byebug
     @event = Event.find_by(id: params[:id])
     @invitation = Invitation.new(attendee_id: params[:user_id], event_id: params[:id])
     attendee = User.find_by(id: params[:user_id])
@@ -37,7 +38,7 @@ class EventsController < ApplicationController
     @invitation = Invitation.find_by(attendee_id: current_user.id, event_id: params[:id])
 
     if @invitation.update(accepted: true)
-      flash[:success] = "Congrats #{current_user.name}, you are attending to this event!!.. #{@invitation.event.name} hosted by #{@invitation.event.creator.name}"
+      flash[:success] = "Congrats #{current_user.name}, you are attending to this event!!.. #{@invitation.event.title} hosted by #{@invitation.event.creator.name}"
       redirect_to invited_events_path
     else
       render event_path(@event)

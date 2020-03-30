@@ -1,6 +1,5 @@
 import $ from "jquery";
 import animateScrollTo from "animated-scroll-to";
-
 setTimeout(() => {
   const carousel = document.querySelector('.carousel-inner');
   if (carousel.firstElementChild) {
@@ -20,3 +19,9 @@ function passed() {
 }
 $(() => $("#up_coming").on("mouseover", () => upcoming()));
 $(() => $("#passed").on("mouseover", () => passed()));
+
+$(() => $(".popup__close").on('click', () => fadeOut()))
+
+function fadeOut() {
+  $("#popup").addClass("popup-hide");
+}

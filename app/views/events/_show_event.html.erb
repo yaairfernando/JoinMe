@@ -1,11 +1,10 @@
-<div class="popup__content">
-  <div class="popup__left">
-  </div>
-  <div class="popup__right">
-    
-    <%= link_to root_path, class: 'popup__close'  do %>
+<%= javascript_pack_tag 'events' %>
+<div class="popup__content row">
+  <div class="popup__right col-md-12">
+
+    <p class="popup__close">
       <i class="fas fa-times"></i>
-    <% end %>
+    </p>
     <div class="show_event">
       <div class="show_event--header">
         <h2>
@@ -45,7 +44,7 @@
       <div class="people-attending-container">
           <h2>People attending to this event:</h2>
           <% @event.invitations.where(accepted: true).each do |attendee| %>
-            <span class="label label-primary"><%= attendee.attendee.name %> </span>
+            <span class="badge badge-primary"><%= attendee.attendee.name %> </span>
           <% end %>
       </div>
     <% end %>

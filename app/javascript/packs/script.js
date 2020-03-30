@@ -1,8 +1,5 @@
 import $ from "jquery";
 
-const signUp = document.querySelector('#sign-up')
-const signIn = document.querySelector('#sign-in')
-
 $(() => {
   if ($('.message').length) {
     setInterval(() => {

@@ -1,5 +1,6 @@
 <div class="container invitations">
   <br/>
+  <%= render 'shared/header' %>
   <% if @invited_events.any? %>
     <%= render @invited_events %>
   <% else %>

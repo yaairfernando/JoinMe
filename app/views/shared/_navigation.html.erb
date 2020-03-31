@@ -2,6 +2,11 @@
   <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
   <label for="navi-toggle" class="navigation__button">
     <span class="navigation__icon">&nbsp;</span>
+    <% if current_user.invitations.where(accepted: false).count > 0 %>
+      <small class="navigation__counter">
+        <%= current_user.invitations.where(accepted: false).count %>
+      </small>
+    <% end %>
   </label>
 
   <div class="navigation__background">&nbsp;</div>
@@ -11,8 +16,11 @@
       <li class="navigation__item">
         <span><%= current_user.name %></span>
       </li>
-      <li class="navigation__item"><%=link_to 'Dashboard', '#', class: 'navigation__link'%></li>
-      <li class="navigation__item"><%=link_to 'Invites', invited_events_path, class: 'navigation__link'%></li>
+      <li class="navigation__item"><%=link_to 'Dashboard', root_path, class: 'navigation__link'%></li>
+      <li class="navigation__item">
+        <%=link_to invited_events_path, class: 'navigation__link' do %> 
+          Invites
+        <% end %></li>
       <li class="navigation__item"><%=link_to 'Log Out', logout_path, class: 'navigation__link'%></li>
     </ul>
   </nav>

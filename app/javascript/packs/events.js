@@ -23,7 +23,7 @@ $(() => $("#up_coming").on("mouseover", () => upcoming()));
 $(() => $("#passed").on("mouseover", () => passed()));
 $(() => $(".popup__close").on('click', () => fadeOut()))
 $(() => $(".arrow").on("click" ,function(){
-  $('html, body').animate({scrollTop: 950}, 800);
+  $('html, body').animate({scrollTop: 950}, 600);
 }));
 
 function fadeOut() {

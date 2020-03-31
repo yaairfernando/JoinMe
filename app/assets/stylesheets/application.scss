@@ -321,6 +321,17 @@ h1 {
     &::after { top: .8rem; }
   }
 
+  &__counter {
+    font-size: 1.7rem;
+    background: #F04546;
+    border-radius: 50%;
+    padding: 0 .7rem;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    position: absolute;
+  }
+
   &__button:hover &__icon::before {
     top: -1rem;
   }
@@ -346,6 +357,12 @@ h1 {
 
 
 // ANIMATIONS
+
+@keyframes bounce {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
 
 @keyframes moveInTop{
   0% {
@@ -383,7 +400,7 @@ h1 {
 .section-events {
   margin-top: -20vh;
   background-color: $color-grey-light-1;
-  padding: 25rem 0;
+  padding: 34rem 0;
 
   .carousel {
     background:  $color-dark-purple;
@@ -574,10 +591,12 @@ h1 {
         p {
           display: flex;
           align-items: center;
+          font-size: 1.3rem;
   
           i {
-            font-size: 25px;
-            padding: 0 5px;
+            font-size: 2.3rem;
+            padding: 0 .5rem;
+            color: $color-red;
           }
         }
 
@@ -837,15 +856,22 @@ h1 {
   background-color: rgba($color-black, .8);
   z-index: 2001;
   padding: 3rem;
+  transition: all 0.2s;
 
   &__content {
     @include absCenter;
-    width: 65%;
+    width: 60%;
     background-color: $color-white;
     box-shadow: 0 2rem 4rem rgba($color-black, .2);
     border-radius: 3px;
     display: table;
     overflow: hidden;
+    transform: translate(-50%, -50%) scale(0) !important;
+    transition: all .3s .3s;
+  }
+
+  .popup-display {
+    transform: translate(-50%, -50%) scale(1) !important;
   }
 
   &__right {
@@ -920,7 +946,7 @@ h1 {
 
       & > p {
         & > i {
-          color: $color-purple-2;
+          color: $color-red;
         }
       }
 
@@ -1104,12 +1130,23 @@ h1 {
 
 .arrow {
   position: absolute;
-  bottom: 0;
+  bottom: 1rem;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: bounce 3s infinite;
+	-webkit-animation: bounce 3s infinite;
+	-moz-animation: bounce 3s infinite;
+  -o-animation: bounce 3s infinite;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  padding: .7rem;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   & > i {
-    font-size: 3rem;
+    font-size: 2.2rem;
     color: #fff;
   }
 }

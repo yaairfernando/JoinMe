@@ -1,2 +1,8 @@
 $("#popup").removeClass("popup-hide");
+if ($("#popup").length) {
+  setTimeout(() => {
+    document.querySelector('.popup__content').classList.add('popup-display')
+    console.log(document.querySelector('.popup__content'))
+  }, 1)
+}
 $("#popup").html("<%= j render partial: 'show_event' %>");

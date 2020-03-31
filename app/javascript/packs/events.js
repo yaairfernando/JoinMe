@@ -17,10 +17,14 @@ function passed() {
   let passed = document.getElementById("passed-events");
   animateScrollTo(passed, {minDuration: 3000})
 }
+var scrolled=0;
+
 $(() => $("#up_coming").on("mouseover", () => upcoming()));
 $(() => $("#passed").on("mouseover", () => passed()));
-
 $(() => $(".popup__close").on('click', () => fadeOut()))
+$(() => $(".arrow").on("click" ,function(){
+  $('html, body').animate({scrollTop: 950}, 800);
+}));
 
 function fadeOut() {
   $("#popup").addClass("popup-hide");

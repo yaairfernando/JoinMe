@@ -1,6 +1,6 @@
 <%= javascript_pack_tag 'events' %>
 <%= render "shared/messages" %>
-  <header class="header">
+<header class="header">
   <div class="header__logo">
     <span>JoinMe</span>
   </div>
@@ -16,6 +16,10 @@
     <% else %>
       <%= link_to 'Sign Up', sign_up_path, class: "btn btn--white btn--animated", id: "sign-up" %>
     <% end %>
+  </div>
+
+  <div class="arrow">
+    <i class="fas fa-arrow-down"></i>
   </div>
 </header>
 

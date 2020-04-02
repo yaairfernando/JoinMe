@@ -1,0 +1,47 @@
+@import 'mixins';
+@import 'variables';
+
+.message {
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 2rem 3rem;
+  text-align: center;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  span {
+    color: #fff;
+    font-size: 1.7rem;
+  }
+
+  .invite {
+    color: #999;
+    font-weight: 500;
+    font-size: 1.7rem;
+  }
+}
+
+.log_in_danger {
+  width: 75%;
+  background-color: $color-red;
+}
+
+.log_in_success {
+  border-radius: 3px;
+  position: absolute;
+  top: 14rem;
+  right: 6rem;
+  z-index: 3;
+  background-color: rgba(200,200,200, 0.5);
+}
+
+.success {
+  background-color: #007BFF;
+}
+
+.sign_up_success {
+  background-color: $color-purple;
+}

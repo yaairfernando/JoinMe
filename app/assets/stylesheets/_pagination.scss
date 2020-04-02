@@ -1,0 +1,30 @@
+@import 'mixins';
+@import 'variables';
+
+.pagination {
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  margin-bottom: 2rem;
+
+  & > li {
+    padding: 1rem 2rem;
+    font-size: 2rem;
+
+    & > a:hover {
+      text-decoration: none;
+    }
+
+    &.active {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  & > li:first-child,
+  & > li:last-child {
+    background-color: $color-purple-2;
+
+    & > a {
+      color: #fff;
+    }
+  }
+}

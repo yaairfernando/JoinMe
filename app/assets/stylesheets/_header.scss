@@ -1,0 +1,116 @@
+@import 'mixins';
+@import 'variables';
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+    to right bottom, 
+    rgba($color-ligth-purple, 0.8), 
+    rgba($color-dark-purple, 0.7)),
+  url(/assets/logo-back2.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  
+  &__logo {
+    position: absolute;
+    left: 4.5rem;
+    top: 4.5rem;
+    
+    span {
+      font-size: 6rem;
+      letter-spacing: -.7rem;
+      line-height: 1.7;
+      font-weight: 500;
+      color: $color-white;
+    }
+  }
+
+  &__sign-up-contanier {
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .slogan {
+      color: $color-white;
+      text-transform: uppercase;
+      margin-bottom: 6rem;
+      backface-visibility: hidden;
+
+      &--main {
+        display: block;
+        font-size: 4.7rem;
+        font-weight: 500;
+        letter-spacing: 2rem;
+        animation: moveInTop 1s ease-in;
+      }
+
+      &--sec {
+        display: block;
+        font-size: 2rem;
+        font-weight: 400;
+        letter-spacing: 1.8rem;
+        animation: moveInBottom 1s ease-in;
+      }
+    }
+
+  }
+  
+  .btn {
+    &:link,
+    &:visited {
+      text-transform: uppercase;
+      text-decoration: none;
+      display: inline-block;
+      border-radius: 10rem;
+      font-size: 3rem;
+      transition: all .2s;
+      padding: 1.5rem 6rem;
+      position: relative;
+    }
+  
+    &:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+
+      &::after {
+        transform: scaleX(1.2) scaleY(1.3);
+        opacity: 0;
+      }
+    }
+  
+    &:active {
+      transform: translateY(-2px);
+      box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+    }
+  
+    &--white {
+      background-color: $color-white;
+      color: $color-light-gray;
+
+      &::after {
+        background-color: $color-white;
+      }
+    }
+  
+    &::after {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      border-radius: 10rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all .4s;
+    }
+  
+    &--animated {
+      animation: moveInBottom 0.5s ease-out .75s;
+      animation-fill-mode: backwards;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import 'mixins';
+@import 'variables';
+
+.invitations {
+  height: calc(100vh - 60px);
+  overflow-y: scroll;
+
+  &__event {
+    margin-top: 3rem;
+  }
+
+  .alert-info {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .start-event-container {
+    text-align: center;
+    padding: 1rem 2rem;
+    height: calc(100vh -80px);
+    /* background: red; */
+    height: calc(100vh -80px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    & > h2 {
+      margin-bottom: 2rem;
+    }
+    
+    & > a {
+      &,
+      &:link,
+      &:active,
+      &:hover {
+        text-decoration: none;
+        background: #007bff;
+        color: #fff;
+        border-radius: 0 1rem 4rem rgba(0,0,0,0.5);
+        padding: 1rem 2rem;
+        margin: 1rem;
+        display: inline-block;
+        border: none;
+        font-size: 2rem;
+        box-shadow: 0 0.3rem 2rem rgba(0,0,0,0.6);
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import 'mixins';
+@import 'variables';
+
+.profile-container {
+  max-width: 180rem;
+  background-color: red;
+  margin: 0 auto;
+
+
+}
+
+@media (max-width: 700px) {
+  .profile-container {
+    background-color: orange;
+  }
+}

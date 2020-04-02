@@ -1,0 +1,28 @@
+@import 'mixins';
+@import 'variables';
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
+body {
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: 400;
+  letter-spacing: 1.9;
+  padding: 3rem;
+  color: $color-light-gray;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+}

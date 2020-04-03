@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def invited_events
-    @invited_events = Event.where(id: Invitation.all.where(attendee_id: current_user.id,
+    @invited_events = Event.includes(:creator).where(id: Invitation.all.where(attendee_id: current_user.id,
                                                            accepted: false).pluck(:event_id))
     @accepted_button = true
   end

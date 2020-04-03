@@ -20,6 +20,12 @@
     filter: blur(3px) brightness(80%);
   }
 
+  &:hover .details-event .edit_event {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-2rem);
+  }
+
   .date-host {
     background-color: #1C2331;
     overflow: hidden;
@@ -41,7 +47,6 @@
       opacity: 0;
       transition: all 0.4s;
     }
-
 
     strong {
       text-align: center;
@@ -70,6 +75,22 @@
   .details-event {
     flex: 4;
     padding: 10px 20px;
+    position: relative;
+
+    .edit_event {
+      backface-visibility: hidden;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translate(10%, 0%);
+      transition: all 0.1s;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
 
     .title {
       font-size: 20px;

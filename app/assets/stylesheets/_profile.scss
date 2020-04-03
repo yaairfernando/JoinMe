@@ -21,6 +21,15 @@
       }
 
     }
+
+    .create-event-container {
+      font-size: 3rem;
+      color: $color-black;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     
     .user-event-details {
       margin-top: 3rem;

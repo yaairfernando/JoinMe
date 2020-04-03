@@ -35,7 +35,7 @@
           <i class="fas fa-map-marker-alt"></i>
           <%= event.location %>
         </p>
-        <p class="description"><%= event.description %></p>
+        <p class="description"><%= event.description.truncate(350, separator: ' ') %></p>
         <% if event.date < Date.today %>
         <span class="badge badge-danger"><%= pluralize(event.invitations.where(accepted: true).count, "person") %> attended to this event!</span>
         <% else %>
@@ -69,5 +69,7 @@
     </div>
   </div>
 </div>
+
+
 
 

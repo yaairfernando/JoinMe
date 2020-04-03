@@ -9,12 +9,13 @@
       <p>
         <%= e.location %>
       </p>
-      <span class="label label-success"><%= e.creator.name %> is hosting this event!!</span>
+      <span class="badge badge-success"><%= e.creator.name %> is hosting this event!!</span>
       <p class="description"><%= e.description %></p>
     </div>
     <div class="footer">
-      <span class="label label-info"><%= e.date.strftime('%Y %B %d %I:%M%p') %></span>
-      <span class="label label-primary"><%= link_to 'Details', event_path(e) %></span>
+      <span class="badge badge-info"><%= e.date.strftime('%Y %B %d %I:%M%p') %></span>
+      <span class="badge badge-primary"><%= link_to "Details", event_path(e), remote: true %></span>
     </div>
   </div>
 <% end %>
+

@@ -36,7 +36,11 @@
           <%= event.location %>
         </p>
         <p class="description"><%= event.description %></p>
-        <span class="badge badge-danger"><%= pluralize(event.invitations.where(accepted: true).count, "person") %> are attending to this event!</span>
+        <% if event.date < Date.today %>
+        <span class="badge badge-danger"><%= pluralize(event.invitations.where(accepted: true).count, "person") %> attended to this event!</span>
+        <% else %>
+          <span class="badge badge-danger"><%= pluralize(event.invitations.where(accepted: true).count, "person") %> are attending to this event!</span>
+        <% end %>
         <% if logged_in? && current_user.id != event.creator_id %>
           <% if current_user.attended_events.any?%>
             <% if current_user.attended_events.ids.include? event.id && !@accepted_button%>
@@ -45,7 +49,11 @@
           <% end %>
         <% end %>
         <% if logged_in? && current_user.id == event.creator_id %>
-        <span class="badge badge-success"><%= event.creator.name %>, you are hosting this event!!</span>
+          <% if event.date < Date.today %>
+            <span class="badge badge-success"><%= event.creator.name %>, you hosted this event!!</span>
+          <% else %>
+            <span class="badge badge-success"><%= event.creator.name %>, you are hosting this event!!</span>
+          <% end %>
         <% else %>
           <span class="badge badge-primary"><%= event.creator.name %> is the host</span>
         <% end %>

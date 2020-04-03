@@ -23,16 +23,24 @@
       </div>
     </div>
     <% if logged_in? && current_user.id == @event.creator_id %>
-      <span class="badge badge-primary badge-primary-invitations">You have <%= @event.invitations.where(accepted: false).count %> invitations pending... </span>
+      <% if @event.date > Date.today %>
+        <span class="badge badge-primary badge-primary-invitations">You have <%= @event.invitations.where(accepted: false).count %> invitations pending... </span>
+      <% end %>
     <% end %>
     <% if logged_in? && current_user.id == @event.creator_id %>
         <% if User.where.not(id: [current_user.id] + Invitation.all.where(event_id: @event.id).pluck(:attendee_id)).count != 0%>
-          <div class="invite-people">
-            <h4>Invite more people to your event</h4>
-            <% User.where.not(id: [current_user.id] + Invitation.all.where(event_id: @event.id).pluck(:attendee_id)).each do |user| %>
-              <%= link_to user.name, invite_event_path(id: @event.id, params: { user_id: user.id }), method: :get, class: "invite-people-item", remote: true %>
-            <% end %>
-          </div>
+          <% if @event.date < Date.today %>
+            <div class="invite-people">
+              <h4>This event is passed!!</h4>
+            </div>
+          <% else %>
+            <div class="invite-people">
+              <h4>Invite more people to your event</h4>
+              <% User.where.not(id: [current_user.id] + Invitation.all.where(event_id: @event.id).pluck(:attendee_id)).each do |user| %>
+                <%= link_to user.name, invite_event_path(id: @event.id, params: { user_id: user.id }), method: :get, class: "invite-people-item", remote: true %>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
     <% end %>
     <% if @event.invitations.where(accepted: true).any? %>

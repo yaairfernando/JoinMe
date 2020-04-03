@@ -1,7 +1,7 @@
 <%= javascript_pack_tag 'events' %>
 <div class="profile-container">
 <div class="row">
-    <div class="col-md-7">
+    <div class="col-md-7 mt-5">
       <div class="events-container">
         <% if logged_in? && @user.id == current_user.id %>
           <%= link_to "Create a new event", new_event_path, class: "create-event" %>
@@ -44,3 +44,4 @@
 <div class="popup popup-hide" id="popup">
   
 </div>
+

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'sign_up', to: 'users#create'
   
   
-  get 'profile', to: 'sessions#show'
+  get 'profile/:id', to: 'users#show', as: 'profile'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'

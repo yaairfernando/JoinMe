@@ -54,7 +54,7 @@
     margin: 1rem;
 
     & > span {
-      display: inline-block;
+      // display: inline-block;
       font-size: 3rem;
       margin-bottom: 3rem;
       font-weight: 300;
@@ -64,13 +64,18 @@
       text-transform: uppercase;
       transition: all 0.4s;
       border-bottom: 2px solid #fff;
+      opacity: 0;
+      visibility: hidden;
+      display: none;
     }
   }
 
   &__link {
     &:link,
     &:visited {
-      display: inline-block;
+      display: none;
+      opacity: 0;
+      visibility: hidden;
       font-size: 3rem;
       font-weight: 300;
       padding: 1rem 3.5rem;
@@ -97,6 +102,29 @@
   &__checkbox:checked ~ &__nav {
     opacity: 1;
     width: 100%;
+  }
+
+  &__checkbox:checked ~ &__nav {
+    .navigation__list {
+      .navigation__item > span {
+        display: inline-block;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__checkbox:checked ~ &__nav {
+    .navigation__list {
+      .navigation__item .navigation__link {
+        &:link,
+        &:visited {
+          display: inline-block;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
   }
 
   &__icon {

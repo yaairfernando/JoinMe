@@ -1,0 +1,104 @@
+aside {
+  padding: 1rem 2rem;
+  
+  .user_info {
+    margin-top: 20px;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+    height: 90vh;
+    padding: 1rem;
+
+    .coming_and_passed_events {
+      padding: 12px 0;
+      border-bottom: 2px solid #3273C5;
+      margin-bottom: 10px;
+      
+      .header {
+        background: #eee;
+
+        h2 {
+          border-bottom: 1px solid #ccc;
+          padding: 5px;
+          color: #1C2331;
+          font-size: 18px;
+          margin: 0;
+          text-align: justify;
+        }
+      }
+
+      .footer {
+        span {
+          a {
+            color: #fff;
+
+            &:hover {
+              cursor: pointer;
+              color: #fff;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  section {
+    padding: 10px 0;
+    margin-top: 20px;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.event-buttons {
+  display: flex;
+  justify-content: space-between;
+  background: #1C2331;
+
+  a {
+    flex: 1;
+    padding: 5px 20px;
+    color: #ccc;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 2px;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      text-decoration: none;
+      background-color: #fff;
+      color: black;
+    }
+  }
+
+  a:nth-child(1):hover {
+    border: 2px solid #1C2331;
+    padding: 3px 18px;
+  }
+
+  a:nth-child(2):hover {
+    padding: 3px 18px;
+    border: 2px solid #1C2331;
+  }
+
+  form {
+    width: 49%;
+
+    button {
+      width: 100%;
+    }
+  }
+}

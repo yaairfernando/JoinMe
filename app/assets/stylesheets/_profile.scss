@@ -2,11 +2,45 @@
 @import 'variables';
 
 .profile-container {
-  max-width: 180rem;
-  background-color: red;
+  padding: 5rem 0;
+  max-width: 175rem;
   margin: 0 auto;
 
+  .events-container {
 
+    .create-event {
+      color: #fff;
+      border: 2px solid #fff;
+      background-color: #551A8B;
+      padding: 1rem 2rem;
+      margin-bottom: 5rem;
+      font-size: 2rem;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+    }
+    
+    .user-event-details {
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+
+      & > span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .user_info {
+    h1 {
+      font-size: 3rem;
+    }
+
+    h5 {
+      font-size: 1.8rem;
+    }
+  }
 }
 
 @media (max-width: 700px) {

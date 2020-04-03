@@ -14,11 +14,6 @@ class User < ApplicationRecord
   has_many :invited_events, through: :invitations, source: :event
   has_many :attended_events, through: :invitations, source: :event
 
-  private
-  def down_case
-    email.downcase!
-  end
-
   def upcoming_events
     attended_events.where('date >= ? AND accepted = ?', DateTime.now, true)
   end
@@ -26,4 +21,10 @@ class User < ApplicationRecord
   def previous_events
     attended_events.where('date < ? AND accepted = ?', DateTime.now, true)
   end
+  
+  private
+  def down_case
+    email.downcase!
+  end
+
 end

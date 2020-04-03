@@ -1,0 +1,46 @@
+<%= javascript_pack_tag 'events' %>
+<div class="profile-container">
+<div class="row">
+    <div class="col-md-7">
+      <div class="events-container">
+        <% if logged_in? && @user.id == current_user.id %>
+          <%= link_to "Create a new event", new_event_path, class: "create-event" %>
+        <% end %>
+        <% if @user.events.any? %>
+          <div class="user-event-details">
+            <span class="badge badge-success"><span class="events_counter"><%= @user.events.count%></span> EVENTS IN YOUR DASHBOARD!!</span>
+          </div>
+          <div class="user_events_pagination">
+            <%= will_paginate @my_events %>
+          </div>
+          <%= render @my_events %>
+        <% else %>
+          <div class="create-event-container">
+            <strong>You have no events!!!</strong>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <aside class="col-md-5">
+      <section class="user_info">
+        <h1>
+          <%= @user.name %>
+        </h1>
+        <div>
+          <h5>You have these events in your schedule!!</h5>
+          <div class="event-buttons" id='<% @user.id %>'>
+            <%= link_to 'Upcoming events', profile_path(@user, params: { coming: 'true' }), class: "comming_request", :remote => true %>
+            <%= link_to 'Passed events', profile_path(@user, params: { passed: 'true' }), class: "passed_request", :remote => true %>
+          </div>
+          <div class="content_custom_event">
+        
+          </div>
+        </div>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<div class="popup popup-hide" id="popup">
+  
+</div>

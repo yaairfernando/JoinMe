@@ -17,7 +17,7 @@
         <li class="navigation__item">
           <span><%= current_user.name %></span>
         </li>
-        <li class="navigation__item"><%=link_to 'Profile', profile_path, class: 'navigation__link'%></li>
+        <li class="navigation__item"><%=link_to 'Profile', profile_path(current_user.id), class: 'navigation__link'%></li>
       <% end %>
       <li class="navigation__item"><%=link_to 'Dashboard', root_path, class: 'navigation__link'%></li>
       <li class="navigation__item">

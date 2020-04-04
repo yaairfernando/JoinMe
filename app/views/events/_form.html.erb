@@ -1,0 +1,27 @@
+<%= simple_form_for @event, html: { multipart: true, class: "form__body" }  do |f| %>
+<div class="form__input">
+  <%= f.input :title, placeholder: "Enter title", label: false %>
+</div>
+
+<div class="form__input">
+  <%= f.input :location, placeholder: "Enter Location", label: false %>
+</div>
+
+<div class="form__input">
+  <%= f.input :description, as: :text, placeholder: "Enter Description", label: false %>
+</div>
+
+<div class="form__input">
+  <%= f.input :date, as: :datetime, placeholder: "Enter Date", label: false %>
+</div>
+
+<% if local_assigns[:hide_image].nil? %>
+  <div class="form__input">
+    <%= f.file_field :image %>
+  </div>
+<% end %>
+
+<div class="form__input">
+  <%= f.submit button, class: "form__sign-in-input" %>
+</div>
+<% end %>

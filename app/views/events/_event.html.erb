@@ -26,9 +26,13 @@
   </div>
   
   <div class="details-event">
-    <div class="edit_event">
-      <%= image_tag('edit.png') %>
-    </div>
+    <% if local_assigns[:show_edit] %>
+      <div class="edit_event">
+        <%= link_to edit_event_path(event) do %>
+          <%= image_tag('edit.png') %>
+        <% end %>
+      </div>
+    <% end%>
     <div class="title">
       <p><%= event.title %></p>
     </div>

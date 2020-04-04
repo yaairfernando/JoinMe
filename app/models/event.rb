@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   has_many :attendees, through: :invitations, source: :attendee
 
   validates :location, presence: true
-  validates :image, presence: true
+  validates :image, presence: true, on: :create
   validates :date, presence: true
   validates :title, presence: true, length: {minimum:5}
   validates :description, presence: true, length: {minimum:10, maximum:800}

@@ -1,6 +1,7 @@
 <%= javascript_pack_tag 'events' %>
 <div class="profile-container">
-<div class="row">
+  <%= render "shared/messages" %>
+  <div class="row">
     <div class="col-md-7 mt-5">
       <div class="events-container">
         <% if logged_in? && @user.id == current_user.id %>
@@ -13,7 +14,7 @@
           <div class="user_events_pagination">
             <%= will_paginate @my_events %>
           </div>
-          <%= render @my_events.includes(:creator) %>
+          <%= render @my_events.includes(:creator), show_edit: true %>
         <% else %>
           <div class="create-event-container">
             <strong>You have no events!!!</strong>

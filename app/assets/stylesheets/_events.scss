@@ -80,8 +80,8 @@
     .edit_event {
       backface-visibility: hidden;
       position: absolute;
-      right: 1rem;
-      top: 1rem;
+      right: 0rem;
+      top: -1rem;
       opacity: 0;
       visibility: hidden;
       transform: translate(10%, 0%);

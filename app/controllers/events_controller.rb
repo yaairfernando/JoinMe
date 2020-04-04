@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   include EventsHelper
-  before_action :find_event, only: %i[show]
+  before_action :find_event, only: %i[show edit] 
 
   def new
     @event = Event.new
@@ -16,6 +16,20 @@ class EventsController < ApplicationController
       redirect_to root_path
     else
       render :new
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    if @event.update(event_params_update)
+      flash[:success] = "Awesome #{@event.creator.name} your event has been saved!!"
+      redirect_to profile_path(current_user)
+    else
+      flash.now[:danger] = 'Please check the form for errors.'
+      render :edit
     end
   end
 
@@ -57,6 +71,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:location, :date, :description, :title, :image)
+  end
+
+  def event_params_update
+    params.require(:event).permit(:location, :date, :description, :title)
   end
 
   def find_event

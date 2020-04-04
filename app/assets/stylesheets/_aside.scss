@@ -7,7 +7,7 @@ aside {
   .user_info {
     margin-top: 10.5rem;
     box-shadow: 0 .5rem 1.1rem 0 rgba(0,0,0,0.18), 0 0.4rem 1.5rem 0 rgba(0,0,0,0.15);
-    height: calc(100vh - 235px);
+    height: 90vh;
     padding: 1rem;
 
     .coming_and_passed_events {
@@ -45,7 +45,7 @@ aside {
 
     .content_custom_event {
       overflow-y: scroll;
-      height: 59rem;
+      height: 69rem;
 
       .body {
         & > p {

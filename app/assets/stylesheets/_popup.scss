@@ -107,6 +107,11 @@
         & > i {
           color: $color-red;
         }
+
+        img {
+          width: 2.5rem;
+          margin-right: .3rem;
+        }
       }
 
       .description {

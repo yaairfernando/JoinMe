@@ -54,16 +54,15 @@
     margin: 1rem;
 
     & > span {
-      // display: inline-block;
       font-size: 3rem;
       margin-bottom: 3rem;
       font-weight: 300;
       width: 50rem;
       padding: 1rem 3.5rem;
-      color: #fff;
+      color: $color-white;
       text-transform: uppercase;
       transition: all 0.4s;
-      border-bottom: 2px solid #fff;
+      border-bottom: 2px solid $color-white;
       opacity: 0;
       visibility: hidden;
       display: none;

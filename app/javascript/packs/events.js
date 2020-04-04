@@ -17,10 +17,15 @@ function passed() {
   let passed = document.getElementById("passed-events");
   animateScrollTo(passed, {minDuration: 3000})
 }
-var scrolled=0;
 
-$(() => $("#up_coming").on("mouseover", () => upcoming()));
-$(() => $("#passed").on("mouseover", () => passed()));
+function go_up() {
+  let header = document.querySelector(".header");
+  animateScrollTo(header, {minDuration: 1000})
+}
+
+$(() => $("#up_coming").on("click", () => upcoming()));
+$(() => $("#passed").on("click", () => passed()));
+$(() => $(".arrow_up").on("click", () => go_up()));
 $(() => $(".popup__close").on('click', () => fadeOut()))
 $(() => $(".arrow").on("click" ,function(){
   $('html, body').animate({scrollTop: 950}, 600);
@@ -78,3 +83,17 @@ $(() => $('.passed_request').bind("ajax:beforeSend", function(){
 }).bind("ajax:error", function(){
 })
 )
+
+$(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 850) {
+      $('.arrow_up').css({
+        'display': 'block'
+      });
+    } else {
+      $('.arrow_up').css({
+        'display': 'none'
+      });
+    }
+  })
+})

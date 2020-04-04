@@ -75,8 +75,8 @@
   <% if @upcoming_events.count != 0 || @passed_events.count != 0 %>
     <div class="row max1400">
       <div class="navegation u-center-text u-margin-bottom-big">
-        <%= link_to 'Upcoming Events', '#', id: "up_coming" %>
-        <%= link_to 'Passed Events', '#', id: "passed" %>
+        <h4 id="up_coming">Upcoming Events</h4>
+        <h4 id="passed">Passed Events</h4>
       </div>
     
       <div class="main-events">
@@ -99,4 +99,8 @@
 
 <div class="popup popup-hide" id="popup">
   
+</div>
+
+<div class="arrow_up">
+  <%= image_tag('arrow_up_menu') %>
 </div>

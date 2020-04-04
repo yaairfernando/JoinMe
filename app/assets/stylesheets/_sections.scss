@@ -68,8 +68,8 @@
     align-items: center;
     width: 100%;
   
-    a {
-      color: #fff;
+    h4 {
+      color: $color-white;
       font-size: 20px;
       font-weight: 400;
       letter-spacing: 10px;
@@ -77,6 +77,8 @@
       transition: all 0.3s ease-in-out;
       width: 100%;
       text-transform: uppercase;
+      height: 100%;
+      line-height: 4rem;
   
       &:hover {
         cursor: pointer;

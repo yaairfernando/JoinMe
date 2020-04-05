@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :invitations, foreign_key: :attendee_id, dependent: :destroy
   has_many :invited_events, through: :invitations, source: :event
   has_many :attended_events, through: :invitations, source: :event
+  has_many :comments, foreign_key: :creator_id
 
   def upcoming_events
     attended_events.where('date >= ? AND accepted = ?', DateTime.now, true)

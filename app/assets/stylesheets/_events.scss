@@ -26,6 +26,12 @@
     transform: translateX(-2rem);
   }
 
+  &:hover .details-event .footer-event {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0);
+  }
+
   .date-host {
     background-color: #1C2331;
     overflow: hidden;
@@ -74,8 +80,8 @@
 
   .details-event {
     flex: 4;
-    padding: 10px 20px;
     position: relative;
+    height: 100%;
 
     .edit_event {
       backface-visibility: hidden;
@@ -94,9 +100,10 @@
 
     .title {
       font-size: 20px;
+      padding: 0rem 2rem;
       font-weight: 400;
       letter-spacing: 3px;
-      height: 25%;
+      height: 17%;
       align-items: flex-end;
       display: flex;
       border-bottom: 1px solid rgba(0,0,0,0.2);
@@ -105,13 +112,12 @@
     .details {
       display: flex;
       flex-direction: column;
-      height: 75%;
-      padding: 20px 0;
+      height: 83%;
+      padding-top: .5rem;
       justify-content: space-between;
 
       .event-details {
-        margin-bottom: 10px;
-
+        padding: 1rem 2rem 0rem 2rem;
         p {
           display: flex;
           align-items: center;
@@ -141,6 +147,13 @@
         }
       }
 
+    }
+    
+    .button-details {
+      display: flex;
+      justify-content: start;
+      padding: 0rem 2rem;
+      
       a {
         border: 2px solid #3273C5;
         padding: 10px 10px;
@@ -151,7 +164,7 @@
         font-size: 16px;
         font-weight: 500;
         color: #3273C5;
-
+  
         &:hover {
           text-decoration: none;
           cursor: pointer;
@@ -159,14 +172,44 @@
           color: #fff;
         }
       }
-    }
-
-    .button-details {
-      display: flex;
-      justify-content: start;
 
       a, p {
         margin-right: 3px;
+      }
+    }
+
+    .footer-event {
+      // border-top: 1px solid rgba(0,0,0,.15);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(2rem);
+      transition: all 0.2s ease-in;
+      opacity: 0;
+      visibility: hidden;
+
+      &__right {
+        & > a {
+          color: #b3b3b3;
+          margin-right: 1rem;
+          font-size: 1.3rem;
+
+          &:hover {
+            text-decoration: underline;
+            color: #000;
+          }
+        }
+      }
+
+      &__left {
+        width: 2rem;
+        & > a {
+          width: 100%;
+
+          & > img {
+            width: 100%;
+          }
+        }
       }
     }
   }

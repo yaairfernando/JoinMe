@@ -74,6 +74,17 @@
           <%= link_to "Accept event invitation", attend_event_path(event), class: 'event_button', method: :get %>
         <% end%>
       </div>
+      <div class="footer-event">
+        <div class="footer-event__right">
+          <%= link_to '100 Comments', new_event_path %>
+          <%= link_to '25 Views', new_event_path %>
+        </div>
+        <div class="footer-event__left">
+          <%= link_to new_event_path do %>
+            <%= image_tag('basic_message.png') %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

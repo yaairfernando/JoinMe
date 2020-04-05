@@ -211,6 +211,21 @@
           }
         }
       }
+
     }
   }
+}
+
+.popup-comments-hide {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+}
+
+.comments-popup {
+
+  &__container {
+    
+  }
+  
 }

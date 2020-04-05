@@ -13,6 +13,16 @@ class CommentsController < ApplicationController
     @comment.destroy
   end
 
+  def index
+    @comments = Event.find(params[:event_id]).comments
+    # byebug
+    respond_to do |f|
+      f.html
+      f.js
+      f.json
+    end
+  end
+
   private
 
   def comment_params

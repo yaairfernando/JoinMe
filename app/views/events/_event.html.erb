@@ -76,13 +76,17 @@
       </div>
       <div class="footer-event">
         <div class="footer-event__right">
-          <%= link_to '100 Comments', new_event_path %>
+          <%= link_to '100 Comments', event_comments_path(event), remote: true %>
           <%= link_to '25 Views', new_event_path %>
         </div>
         <div class="footer-event__left">
           <%= link_to new_event_path do %>
             <%= image_tag('basic_message.png') %>
           <% end %>
+        </div>
+
+        <div class="comments-popup popup-comments-hide">
+
         </div>
       </div>
     </div>

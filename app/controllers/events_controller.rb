@@ -63,7 +63,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.js # show.js.erb
-      format.json { render json: @event }
+      format.json {render: @comments}
     end
   end
 

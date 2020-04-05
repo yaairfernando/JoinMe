@@ -1,0 +1,9 @@
+console.log("Yes from comments")
+$(".comments-popup").removeClass("popup-comments-hide")
+
+if ($(".comments-popup").length) {
+  setTimeout(() => {
+    document.querySelector('.comments-popup__container').classList.add('popup-display')
+  }, 10)
+}
+$(".comments-popup").html("<%= j render partial: 'comment', @comments: @comments%>")

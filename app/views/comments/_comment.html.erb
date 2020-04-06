@@ -1,5 +1,7 @@
 <div class="comments-popup__container">
-  <%= @comments.each do |c| %>
+  <% @comments.each do |c| %>
+    <%= c.creator.name %>
     <%= c.body %>
+    <%= c.created_at %>
   <% end %>
 </div>

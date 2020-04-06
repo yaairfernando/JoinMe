@@ -11,7 +11,7 @@
 
   &:hover .date-host__details {
     opacity: 1;
-    z-index: 2;
+    // z-index: 2;
     transform: translateY(0);
   }
 
@@ -47,6 +47,7 @@
     position: relative;
 
     &__details {
+      position: relative;
       backface-visibility: hidden;
       z-index: 1;
       transform: translate(0%, 170%);
@@ -223,9 +224,15 @@
 }
 
 .comments-popup {
-  height: 20rem;
-  width: 20rem;
-  background-color: red;
+  height: 45rem;
+  width: 45rem;
+  background-color: $color-white;
+  position: absolute;
+  bottom: 100%;
+  left: 6%;
+  padding: 1rem;
+  border: 1px solid #aaa;
+  z-index: 10;
 
   &__container {
   }

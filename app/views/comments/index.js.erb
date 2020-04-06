@@ -6,4 +6,4 @@ if ($(".comments-popup").length) {
     document.querySelector('.comments-popup__container').classList.add('popup-display')
   }, 10)
 }
-$(".comments-popup").html("<%= j render partial: 'comment', @comments: @comments%>")
+$(".comments-popup").html("<%= j render partial: 'comment' %>")

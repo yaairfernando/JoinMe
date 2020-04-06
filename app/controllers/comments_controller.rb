@@ -14,6 +14,7 @@ class CommentsController < ApplicationController
   end
 
   def index
+
     @comments = Event.find(params[:event_id]).comments
     # byebug
     respond_to do |f|

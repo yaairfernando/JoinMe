@@ -23,6 +23,11 @@ function go_up() {
   animateScrollTo(header, {minDuration: 1000})
 }
 
+function mouseLeave() {
+  $('.comments-popup').addClass('popup-comments-hide');
+}
+
+// $(() => $('.events').on("mouseleave", () => mouseLeave()));
 $(() => $("#up_coming").on("click", () => upcoming()));
 $(() => $("#passed").on("click", () => passed()));
 $(() => $(".arrow_up").on("click", () => go_up()));

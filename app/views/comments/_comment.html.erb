@@ -1,3 +1,5 @@
 <div class="comments-popup__container">
-  <%= @comment.body %>
+  <%= @comments.each do |c| %>
+    <%= c.body %>
+  <% end %>
 </div>

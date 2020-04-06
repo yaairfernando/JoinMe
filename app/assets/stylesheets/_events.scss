@@ -236,5 +236,23 @@
 
   &__container {
   }
+
+  .comment-content {
+
+    .comment-commenter{
+
+      & > h2.commenter {
+        color: #2F87BB;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-right: 1rem;
+      }
+
+    }
+
+    .comment-body {
+
+    }
+  }
   
 }

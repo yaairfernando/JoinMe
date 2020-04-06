@@ -1,7 +1,19 @@
 <div class="comments-popup__container">
   <% @comments.each do |c| %>
-    <%= c.creator.name %>
-    <%= c.body %>
-    <%= c.created_at %>
+    <div class="comment-content">
+      <div class="comment-commenter">
+        <h2 class="commenter">
+          <%= c.creator.name %>
+        </h2>
+        <p>
+          <%= time_ago_in_words(c.created_at) %>
+        </p>
+      </div>
+      <div class="comment-body">
+          <p>
+          <%= c.body %>
+          </p>
+      </div>
+    </div>
   <% end %>
 </div>

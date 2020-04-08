@@ -1,10 +1,10 @@
-@import 'mixins';
-@import 'variables';
+@import "mixins";
+@import "variables";
 
 .events {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   height: 370px;
-  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18), 0 4px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -33,7 +33,7 @@
   }
 
   .date-host {
-    background-color: #1C2331;
+    background-color: #1c2331;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@
     flex: 2;
     align-items: center;
     font-size: 25px;
-    border-right: 3px solid #3273C5;
+    border-right: 3px solid #3273c5;
     position: relative;
 
     &__details {
@@ -63,7 +63,7 @@
       text-align: center;
       font-size: 17px;
       display: flex;
-      flex-direction: column;  
+      flex-direction: column;
     }
 
     & > img {
@@ -107,14 +107,14 @@
       height: 17%;
       align-items: flex-end;
       display: flex;
-      border-bottom: 1px solid rgba(0,0,0,0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
 
     .details {
       display: flex;
       flex-direction: column;
       height: 83%;
-      padding-top: .5rem;
+      padding-top: 0.5rem;
       justify-content: space-between;
 
       .event-details {
@@ -126,12 +126,12 @@
 
           img {
             width: 2.5rem;
-            margin-right: .3rem;
+            margin-right: 0.3rem;
           }
-  
+
           i {
             font-size: 2.3rem;
-            padding: 0 .5rem;
+            padding: 0 0.5rem;
             color: $color-red;
           }
         }
@@ -147,16 +147,15 @@
           font-size: 1.2rem;
         }
       }
-
     }
-    
+
     .button-details {
       display: flex;
       justify-content: start;
       padding: 0rem 2rem;
-      
+
       a {
-        border: 2px solid #3273C5;
+        border: 2px solid #3273c5;
         padding: 10px 10px;
         width: 227px;
         text-align: center;
@@ -164,17 +163,18 @@
         transition: all 0.3s ease-in-out;
         font-size: 16px;
         font-weight: 500;
-        color: #3273C5;
-  
+        color: #3273c5;
+
         &:hover {
           text-decoration: none;
           cursor: pointer;
-          background-color: #3273C5;
+          background-color: #3273c5;
           color: #fff;
         }
       }
 
-      a, p {
+      a,
+      p {
         margin-right: 3px;
       }
     }
@@ -212,7 +212,6 @@
           }
         }
       }
-
     }
   }
 }
@@ -224,35 +223,89 @@
 }
 
 .comments-popup {
-  height: 45rem;
-  width: 45rem;
+  height: 38rem;
+  width: 44rem;
   background-color: $color-white;
   position: absolute;
   bottom: 100%;
   left: 6%;
-  padding: 1rem;
+  padding: 2rem;
   border: 1px solid #aaa;
   z-index: 10;
-
+  border-radius: 4px;
   &__container {
+    position: relative;
+    height: 100%;
   }
 
   .comment-content {
-
-    .comment-commenter{
+    .comment-commenter {
+      display: flex;
+      align-items: center;
 
       & > h2.commenter {
-        color: #2F87BB;
-        font-size: 1.5rem;
-        font-weight: 500;
+        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         margin-right: 1rem;
+        color: #006dac;
+        line-height: 24px;
+        font-weight: 600;
+        font-size: 1.4rem;
+        direction: ltr;
       }
 
+      & > span {
+        margin: 0;
+        margin-bottom: 0;
+        line-height: 18px;
+        color: #898989;
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-left: .5rem;
+      }
     }
 
     .comment-body {
+      color: #212124;
 
+      & > p {
+        font-size: 1.2rem;
+      }
     }
   }
-  
+
+  .comments-form {
+    position: absolute;
+    bottom: 0.5rem;
+    padding: 2rem 0;
+    width: 100%;
+
+    .simple_form {
+
+      #comment_body {
+        padding: 1rem;
+        border: 2px solid #2f87bb;
+        border-radius: 3px;
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+
+      & > input[type="submit"] {
+        background: #2f87bb;
+        border-radius: 3px;
+        border-radius: 3px;
+        width: 50%;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 800;
+        padding: 1rem 2rem;
+        margin-top: 1rem;
+        border: none;
+        float: right;
+      }
+    }
+    
+  }
 }

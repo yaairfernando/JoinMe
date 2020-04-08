@@ -1,19 +1,30 @@
 <div class="comments-popup__container">
-  <% @comments.each do |c| %>
+  <% @event.comments.each do |c| %>
     <div class="comment-content">
       <div class="comment-commenter">
         <h2 class="commenter">
           <%= c.creator.name %>
         </h2>
-        <p>
+        <span>
           <%= time_ago_in_words(c.created_at) %>
-        </p>
+        </span>
       </div>
       <div class="comment-body">
           <p>
           <%= c.body %>
           </p>
       </div>
+    </div>
+  <% end %>
+  <% if logged_in? %>
+    <div class="comments-form">
+      <%= simple_form_for([@event, @event.comments.build]) do |f| %>
+        <div>
+          <%= f.input :body, label: false, input_html: {class: "input"}, wrapper: false, label_html: { class: "label"}, placeholder: "Add a comment" %>
+        </div>
+    
+        <%= f.button :submit, 'Leave a reply', class: "button" %>
+      <% end %>
     </div>
   <% end %>
 </div>

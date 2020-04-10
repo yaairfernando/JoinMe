@@ -1,21 +1,23 @@
 <div class="comments-popup__container">
-    <div class="comment-content">
-  <% @event.comments.each do |c| %>
-      <div class="comment-commenter">
-        <h2 class="commenter">
-          <%= c.creator.name %>
-        </h2>
-        <span>
-          <%= time_ago_in_words(c.created_at) %>
-        </span>
-      </div>
-      <div class="comment-body">
-          <p>
-          <%= c.body %>
-          </p>
-      </div>
-  <% end %>
+  <div class="comment-content">
+    <% @event.comments.each do |c| %>
+    <div class="comment-container">
+        <div class="comment-commenter">
+          <h2 class="commenter">
+            <%= c.creator.name %>
+          </h2>
+          <span>
+            <%= time_ago_in_words(c.created_at) %>
+          </span>
+        </div>
+        <div class="comment-body">
+            <p>
+            <%= c.body %>
+            </p>
+        </div>
     </div>
+    <% end %>
+  </div>
   <% if logged_in? %>
     <div class="comments-form">
       <%= simple_form_for([@event, @event.comments.build], remote: true) do |f| %>

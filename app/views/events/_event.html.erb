@@ -77,20 +77,14 @@
       <div class="footer-event">
         <div class="footer-event__right">
           <%= link_to pluralize(event.comments.count, 'Comment'), event_comments_path(event), remote: true %>
-          <%= link_to '25 Views', new_event_path %>
+          <%= link_to '25 Views', new_event_path, class: "event-views" %>
         </div>
         <div class="footer-event__left">
           <%= link_to event_comments_path(event), remote: true do %>
             <%= image_tag('basic_message.png') %>
           <% end %>
         </div>
-
-
-        
-          <div class="comments-popup popup-comments-hide">
-
-          </div>
-      
+        <div class="comments-popup popup-comments-hide"></div>
       </div>
     </div>
   </div>

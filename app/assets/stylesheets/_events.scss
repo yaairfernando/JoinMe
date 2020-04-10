@@ -239,6 +239,8 @@
   }
 
   .comment-content {
+    height: 20rem;
+    overflow-y: scroll;
     .comment-commenter {
       display: flex;
       align-items: center;
@@ -278,7 +280,6 @@
   .comments-form {
     position: absolute;
     bottom: 0.5rem;
-    padding: 2rem 0;
     width: 100%;
 
     .simple_form {

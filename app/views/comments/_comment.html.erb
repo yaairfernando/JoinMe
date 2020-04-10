@@ -1,6 +1,6 @@
 <div class="comments-popup__container">
-  <% @event.comments.each do |c| %>
     <div class="comment-content">
+  <% @event.comments.each do |c| %>
       <div class="comment-commenter">
         <h2 class="commenter">
           <%= c.creator.name %>
@@ -14,11 +14,11 @@
           <%= c.body %>
           </p>
       </div>
-    </div>
   <% end %>
+    </div>
   <% if logged_in? %>
     <div class="comments-form">
-      <%= simple_form_for([@event, @event.comments.build]) do |f| %>
+      <%= simple_form_for([@event, @event.comments.build], remote: true) do |f| %>
         <div>
           <%= f.input :body, label: false, input_html: {class: "input"}, wrapper: false, label_html: { class: "label"}, placeholder: "Add a comment" %>
         </div>

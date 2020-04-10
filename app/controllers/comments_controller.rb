@@ -5,6 +5,11 @@ class CommentsController < ApplicationController
     @comment.creator_id = current_user.id if current_user
     # byebug
     @comment.save!
+    respond_to do |f|
+      f.html
+      f.js
+      f.json
+    end
   end
 
   def destroy
@@ -15,8 +20,6 @@ class CommentsController < ApplicationController
 
   def index
     @event = Event.find(params[:event_id])
-    # @comments = Event.find(params[:event_id]).comments
-    # byebug
     respond_to do |f|
       f.html
       f.js

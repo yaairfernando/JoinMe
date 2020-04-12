@@ -1,12 +1,12 @@
 import $ from "jquery";
 
-// $(() => {
-//   if ($('.message').length) {
-//     setInterval(() => {
-//       $('.message').attr('style', 'display: none');
-//     }, 5000)
-//   }
-// })
+$(() => {
+  if ($('.message').length) {
+    setInterval(() => {
+      $('.message').attr('style', 'display: none');
+    }, 5000)
+  }
+})
 
 $(() => $('.form__header--signup').click(() => toggleClassSignUp()))
 $(() => $('.form__header--signin').click(() => toggleClassSignIn()))

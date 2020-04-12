@@ -12,9 +12,9 @@ $(() => $('.form__body').bind("ajax:beforeSend", function(){
     let form = document.querySelector('.form__container');
     form.insertBefore(div,document.querySelector('.form__body'))
   
-    // setTimeout(() => {
-    //   document.querySelector('.message').style.display = 'none'
-    // }, 6000)
+    setTimeout(() => {
+      document.querySelector('.message').style.display = 'none'
+    }, 6000)
   }
 }).bind('ajax:complete', function(){
 }).bind("ajax:error", function(){

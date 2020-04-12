@@ -88,7 +88,7 @@
       backface-visibility: hidden;
       position: absolute;
       right: 0rem;
-      top: -1rem;
+      top: 1rem;
       opacity: 0;
       visibility: hidden;
       transform: translate(10%, 0%);
@@ -202,17 +202,6 @@
         & > a:hover {
           text-decoration: underline;
           color: #000;
-        }
-      }
-
-      &__left {
-        width: 2rem;
-        & > a {
-          width: 100%;
-
-          & > img {
-            width: 100%;
-          }
         }
       }
     }

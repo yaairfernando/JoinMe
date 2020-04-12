@@ -81,13 +81,19 @@
     
       <div class="main-events">
         <div id="upcoming-events">
-          <h2 class="title">Upcoming Events</h2>
+          <h2 class="title">
+            <hr>
+            <div class="circle"></div>
+          </h2>
           <%= will_paginate @upcoming_events, param_name: "upcoming_page" %>
           <%= render @upcoming_events.includes(:creator) %>
         </div>
         
         <div id="passed-events">
-          <h2 class="title">Passed Events</h2>
+          <h2 class="title">
+            <hr>
+            <div class="circle"></div>
+          </h2>
           <%= will_paginate @passed_events, param_name: "passed_page" %>
           <%= render @passed_events.includes(:creator) %>
         </div>

@@ -72,7 +72,7 @@
     }
   
     &:hover {
-      transform: translateY(-7px);
+      transform: translateY(-5px);
       box-shadow: 0 1rem 2rem rgba($color-black,0.2);
 
       &::after {
@@ -95,18 +95,18 @@
       }
     }
   
-    &::after {
-      content: '';
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      border-radius: 10rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      transition: all .4s;
-    }
+    // &::after {
+    //   content: '';
+    //   display: inline-block;
+    //   height: 100%;
+    //   width: 100%;
+    //   border-radius: 10rem;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   z-index: -1;
+    //   transition: all .4s;
+    // }
   
     &--animated {
       animation: moveInBottom 0.5s ease-out .75s;

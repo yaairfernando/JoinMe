@@ -3,7 +3,7 @@
 
 .message {
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 1rem;
   padding: 2rem 3rem;
   text-align: center;
   height: 60px;
@@ -29,7 +29,8 @@
   background-color: $color-red;
 }
 
-.log_in_success {
+.log_in_success,
+.sign_up_success {
   border-radius: 3px;
   position: absolute;
   top: 14rem;
@@ -40,8 +41,4 @@
 
 .success {
   background-color: #007BFF;
-}
-
-.sign_up_success {
-  background-color: $color-purple;
 }

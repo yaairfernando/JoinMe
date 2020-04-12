@@ -32,6 +32,7 @@ gem 'time_difference'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 gem 'hirb'
+gem 'impressionist'
 
 group :production, :development, :test do
   gem 'cloudinary'

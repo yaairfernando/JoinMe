@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   has_many :invitations, foreign_key: :event_id
   has_many :attendees, through: :invitations, source: :attendee
   has_many :comments, dependent: :destroy
+  is_impressionable
 
   validates :location, presence: true
   validates :image, presence: true, on: :create

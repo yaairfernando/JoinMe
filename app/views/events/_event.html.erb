@@ -77,7 +77,10 @@
       <div class="footer-event">
         <div class="footer-event__right">
           <%= link_to pluralize(event.comments.count, 'Comment'), event_comments_path(event), remote: true %>
-          <%= link_to '25 Views', new_event_path, class: "event-views" %>
+          <div class="views">
+            <%= event.impressionist_count %>
+            <span class="icon">Views</span>
+          </div>
         </div>
         <div class="footer-event__left">
           <%= link_to event_comments_path(event), remote: true do %>

@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
   before_action :find_event, only: %i[show edit] 
+  impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id]
 
   def new
     @event = Event.new

@@ -11,7 +11,7 @@
  <h2 align="center">Join me Application.</h2>
 
   <p align="center">
-    Ruby on Rails project that allow the user to create new events and invite people to their events.
+    Ruby on Rails project that allows the user to create new events and invite people to their events.
     <br />
     <a href="https://github.com/YairFernando67/JoinMe"><strong>Explore the docs »</strong></a>
     <br />

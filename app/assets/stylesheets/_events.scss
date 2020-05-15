@@ -15,7 +15,7 @@
   }
 
   @media (max-width: 425px) {
-    height: 950px;
+    height: auto;
   }
 
   &:hover .date-host__details {
@@ -68,7 +68,7 @@
     }
 
     @media (max-width: 425px) {
-      flex: 0 0 40%;
+      flex: 0 0 40rem;
     }
 
     &__details {
@@ -247,7 +247,7 @@
       }
 
       @media (max-width: 425px) {
-        margin-top: 5rem;
+        margin-top: auto;
       }
 
       a {

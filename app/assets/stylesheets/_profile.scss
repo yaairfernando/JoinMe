@@ -3,8 +3,12 @@
 
 .profile-container {
   padding-top: 5rem;
-  max-width: 175rem;
+  max-width: 120rem;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    margin: 0 3rem;
+  }
 
   .events-container {
 
@@ -15,6 +19,10 @@
       padding: 1rem 2rem;
       margin-bottom: 5rem;
       font-size: 2rem;
+
+      @media (max-width: 1024px) {
+        font-size: 2.2rem;
+      }
 
       &:hover {
         text-decoration: none;
@@ -37,6 +45,10 @@
 
       & > span {
         font-size: 1.2rem;
+
+        @media (max-width: 1024px) {
+          font-size: 1.4rem;
+        }
       }
     }
   }
@@ -44,16 +56,18 @@
   .user_info {
     h1 {
       font-size: 2.5rem;
+
+      @media (max-width: 1024px) {
+        font-size: 2.8rem;
+      }
     }
 
     h5 {
       font-size: 1.8rem;
-    }
-  }
-}
 
-@media (max-width: 700px) {
-  .profile-container {
-    background-color: orange;
+      @media (max-width: 1024px) {
+        font-size: 2rem;
+      }
+    }
   }
 }

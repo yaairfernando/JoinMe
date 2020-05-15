@@ -47,6 +47,11 @@
   margin-top: 6rem;
   border: 1px solid $color-light-white;
 
+  @media (max-width: 1024px) {
+    padding: 0 2rem;
+    width: 61rem;
+  }
+
   &__header {
     display: flex;
     justify-content: space-around;

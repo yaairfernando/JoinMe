@@ -2,7 +2,7 @@
 <div class="profile-container">
   <%= render "shared/messages" %>
   <div class="row">
-    <div class="col-md-7 mt-5">
+    <div class="col-md-12 col-lg-12 mt-5">
       <div class="events-container">
         <% if logged_in? && @user.id == current_user.id %>
           <%= link_to "Create a new event", new_event_path, class: "create-event" %>
@@ -22,7 +22,7 @@
         <% end %>
       </div>
     </div>
-    <aside class="col-md-5">
+    <aside class="col-md-12 col-lg-12">
       <section class="user_info">
         <h1>
           <%= @user.name %>

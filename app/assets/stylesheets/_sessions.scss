@@ -49,6 +49,11 @@
 
   @media (max-width: 1024px) {
     padding: 0 2rem;
+    width: 65%;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 2rem;
     width: 90%;
   }
 
@@ -112,6 +117,10 @@
     width: 75%;
     margin-top: 6rem;
     margin-bottom: 10rem;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 5rem;
+    }
 
     .input {
       margin-bottom: 2rem;

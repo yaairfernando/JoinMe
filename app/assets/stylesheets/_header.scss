@@ -39,6 +39,10 @@
       margin-bottom: 6rem;
       backface-visibility: hidden;
 
+      @media (max-width: 1024px) {
+        margin-left: 3rem;
+      }
+
       &--main {
         display: block;
         font-size: 4.7rem;

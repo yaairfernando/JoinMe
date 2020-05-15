@@ -61,6 +61,10 @@
 .section-all-events {
   background-color: $color-grey-light-1;
 
+  @media (max-width: 425px) {
+    padding-bottom: 15rem;
+  }
+
   .badge {
     font-size: 1.1rem;
   }

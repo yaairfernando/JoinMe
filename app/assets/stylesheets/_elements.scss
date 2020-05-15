@@ -11,6 +11,10 @@
 	-moz-animation: bounce 3s infinite;
   -o-animation: bounce 3s infinite;
 
+  @media (max-width: 425px) {
+    left: 46%;
+  }
+
   & > img {
     width: 4rem;
   }

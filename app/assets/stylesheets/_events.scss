@@ -162,7 +162,7 @@
       }
 
       @media (max-width: 425px) {
-        height: 10%;
+        height: 6rem;
         font-size: 16px;
       }
     }
@@ -243,11 +243,7 @@
       padding: 0rem 2rem;
 
       @media (max-width: 1024px) {
-        margin-top: auto;
-      }
-
-      @media (max-width: 425px) {
-        margin-top: auto;
+        margin-top: 4rem;
       }
 
       a {
@@ -332,6 +328,11 @@
   border: 1px solid #aaa;
   z-index: 10;
   border-radius: 4px;
+
+  @media (max-width: 425px) {
+    width: 35rem;
+  }
+  
   &__container {
     position: relative;
     height: 100%;
@@ -419,11 +420,11 @@
 
         .comment-arrow {
           position: absolute;
-          width: 11px;
-          height: 21px;
+          width: 12px;
+          height: 25px;
           overflow: hidden;
           top: 10px;
-          left: -9px;
+          left: -10px;
           padding-left: 0.3rem;
         }
 
@@ -433,9 +434,11 @@
           width: 2rem;
           height: 2rem;
           border-radius: 2px;
-          background: $color-white;
+          padding: 1rem;
+          background: #fff;
           border: 2px solid #008ddf;
           transform: rotate(45deg);
+          margin-top: 0.5rem;
         }
       }
     }

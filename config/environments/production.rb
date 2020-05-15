@@ -4,6 +4,7 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
+  # Allows images to compile on production
   config.serve_static_files = true
   config.assets.compile = true
 

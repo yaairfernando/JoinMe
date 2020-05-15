@@ -69,6 +69,10 @@
       transition: all .2s;
       padding: 1.5rem 6rem;
       position: relative;
+
+      @media (max-width: 768) {
+        font-size: 2rem;
+      }
     }
   
     &:hover {

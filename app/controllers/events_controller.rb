@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
   before_action :find_event, only: %i[show edit] 
-  impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id]
+  impressionist actions: [:show], unique: [:impressionable_type, :impressionable_id, :user_id]
 
   def new
     @event = Event.new
@@ -11,6 +11,7 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
     event_days_to_start @event
     if @event.save
+      # byebug
       @value = Cloudinary::Uploader.upload(params[:event][:image])
       update_icon_url @value
       flash[:success] = "Congrats!! #{current_user.name}, your event will start in #{@days} days!!!.."

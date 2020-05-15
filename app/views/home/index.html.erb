@@ -4,13 +4,12 @@
   <div class="header__logo">
     <span>JoinMe</span>
   </div>
-
   <div class="header__sign-up-contanier">
     <h1 class="slogan">
       <span class="slogan--main">Awesome Events</span>
       <span class="slogan--sec">only with one click!</span>
     </h1>
-
+    
     <% if logged_in? %>
       <%= link_to 'Host a new Event', new_event_path, class: "btn btn--white btn--animated", id: "sign-up" %>
     <% else %>
@@ -26,7 +25,7 @@
 
 <section class="section-events">
   <div class="u-center-text u-margin-bottom-big">
-    <h2 class="heading-secondary">Excitions events for successful people</h2>
+    <h2 class="heading-secondary">Find your next event!!</h2>
   </div>
 
   <div class="row max1400">
@@ -110,3 +109,6 @@
 <div class="arrow_up">
   <%= image_tag('arrow_up_menu.png') %>
 </div>
+
+
+<%= render 'layouts/footer' %>

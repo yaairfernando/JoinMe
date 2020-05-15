@@ -1,10 +1,22 @@
-.u-center-text { text-align: center;}
-.u-margin-bottom-small { margin-bottom: 1.5rem; }
-.u-margin-bottom-medium { margin-bottom: 4rem; }
-.u-margin-bottom-big { margin-bottom: 8rem; }
-.max1400 { 
+.u-center-text {
+  text-align: center;
+}
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+.u-margin-bottom-big {
+  margin-bottom: 8rem;
+}
+.max1400 {
   max-width: 140rem;
   margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    padding: 0 3rem;
+  }
 }
 .flex {
   display: flex;

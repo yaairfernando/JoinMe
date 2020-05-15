@@ -6,8 +6,12 @@
   background-color: $color-grey-light-1;
   padding: 34rem 0;
 
+  @media (max-width: 1024px) {
+    padding: 34rem 0 10rem 0;
+  }
+
   .carousel {
-    background:  $color-dark-purple;
+    background: $color-dark-purple;
     height: 100%;
     text-align: center;
     outline-offset: 1rem;
@@ -17,11 +21,15 @@
     height: 35rem;
     transform: skewX(5deg);
 
+    @media (max-width: 1024px) {
+      margin-top: 2rem;
+    }
+
     &:hover {
       transform: skewX(12deg);
       outline: 0.5rem solid $color-dark-purple;
-      transform: scale(1.03) translateY(-.5rem);
-      box-shadow: 0 2.5rem 4rem rgba(0,0,0,0.5);
+      transform: scale(1.03) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
       z-index: 20;
     }
 
@@ -62,12 +70,15 @@
     z-index: 5;
     height: 4rem;
     display: flex;
-    background-image: linear-gradient(to right, rgba($color-ligth-purple, 0.8), 
-    rgba($color-dark-purple, 0.7));
+    background-image: linear-gradient(
+      to right,
+      rgba($color-ligth-purple, 0.8),
+      rgba($color-dark-purple, 0.7)
+    );
     justify-content: center;
     align-items: center;
     width: 100%;
-  
+
     h4 {
       color: $color-white;
       font-size: 20px;
@@ -79,7 +90,12 @@
       text-transform: uppercase;
       height: 100%;
       line-height: 4rem;
-  
+
+      @media (max-width: 1024px) {
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+
       &:hover {
         cursor: pointer;
         text-decoration: none;
@@ -112,6 +128,5 @@
         }
       }
     }
-  
   }
 }

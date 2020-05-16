@@ -1,6 +1,9 @@
 <%= render 'header' %>
 
 <div class="form">
+  <div class="go-back-to-profile">
+    <%= link_to 'Back to profile', profile_path(current_user.id) %>
+  </div>
   <div class="form__title">
     <h3>Create your event</h3>
     <span>Enjoy your life by sharing awesome events!!!.</span>

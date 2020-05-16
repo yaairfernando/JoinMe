@@ -38,6 +38,10 @@
     opacity: 1;
     visibility: visible;
     transform: translateX(-2rem);
+
+    @media (max-width: 425px) {
+      transform: translateX(-10px);
+    }
   }
 
   &:hover .details-event .footer-event {
@@ -141,6 +145,12 @@
       visibility: hidden;
       transform: translate(10%, 0%);
       transition: all 0.1s;
+
+      @media (max-width: 425px) {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-10px);
+      }
 
       &:hover {
         cursor: pointer;

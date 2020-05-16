@@ -1,8 +1,13 @@
-$(".comments-popup").toggleClass("popup-comments-hide");
+$('.events').each(function(i)
+{
+    if ($(this).attr('id') === '<%= @event.id %>') {
+      
+      let popup = $(this).find(".comments-popup");
+      popup.toggleClass("popup-comments-hide");
+      if (popup.length) {
+        popup.find(".comments-popup__container").addClass('popup-display')
+        popup.html("<%= j render partial: 'comment' %>")
+      }
+    }
+});
 
-if ($(".comments-popup").length) {
-  setTimeout(() => {
-    document.querySelector('.comments-popup__container').classList.add('popup-display')
-  }, 5)
-}
-$(".comments-popup").html("<%= j render partial: 'comment' %>")

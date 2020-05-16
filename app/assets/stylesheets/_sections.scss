@@ -61,6 +61,10 @@
 .section-all-events {
   background-color: $color-grey-light-1;
 
+  @media (max-width: 425px) {
+    padding-bottom: 15rem;
+  }
+
   .badge {
     font-size: 1.1rem;
   }
@@ -79,6 +83,10 @@
     align-items: center;
     width: 100%;
 
+    @media (max-width: 1024px) {
+      margin-bottom: 1rem;
+    }
+
     h4 {
       color: $color-white;
       font-size: 20px;
@@ -92,7 +100,7 @@
       line-height: 4rem;
 
       @media (max-width: 1024px) {
-        font-size: 14px;
+        font-size: 11px;
         letter-spacing: 2px;
       }
 

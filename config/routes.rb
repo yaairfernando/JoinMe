@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-  get 'comments/destroy'
   root 'home#index'
   get 'sign_up', to: 'users#new'
   post 'sign_up', to: 'users#create'

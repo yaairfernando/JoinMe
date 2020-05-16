@@ -11,7 +11,7 @@ aside {
     padding: 1rem;
 
     @media (max-width: 1024px) {
-      height: 65vh;
+      height: 80rem;
     }
 
     .coming_and_passed_events {
@@ -50,6 +50,10 @@ aside {
     .content_custom_event {
       overflow-y: scroll;
       height: 69rem;
+
+      @media (max-width: 425px) {
+        height: 63rem;
+      }
 
       .body {
         & > p {

@@ -47,9 +47,43 @@
   margin-top: 6rem;
   border: 1px solid $color-light-white;
 
+  .go-back-to-profile {
+    display: inline-block;
+    width: 20%;
+    background: #777;
+    padding: 1rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 0 0 15px 0;
+
+    @media (max-width: 425px) {
+      border-radius: 0 0 0px 0;
+      position: absolute;
+      left: 0;
+      width: 15rem;
+      top: 8%;
+    }
+
+    a {
+      color: #fff;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
   @media (max-width: 1024px) {
     padding: 0 2rem;
-    width: 61rem;
+    width: 65%;
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 600px) {
+    padding: 0 2rem;
+    width: 90%;
   }
 
   &__header {
@@ -112,6 +146,10 @@
     width: 75%;
     margin-top: 6rem;
     margin-bottom: 10rem;
+
+    @media (max-width: 1024px) {
+      margin-bottom: 5rem;
+    }
 
     .input {
       margin-bottom: 2rem;

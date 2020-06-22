@@ -34,6 +34,8 @@ gem 'will_paginate'
 gem 'hirb'
 gem 'impressionist'
 
+gem 'sassc', '~> 2.1.0'
+
 group :production, :development, :test do
   gem 'cloudinary'
 end

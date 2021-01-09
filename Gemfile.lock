@@ -274,8 +274,9 @@ DEPENDENCIES
   bootstrap-will_paginate
   bullet
   byebug
-  capistrano-bundler (~> 1.6)
-  capistrano-rails (~> 1.5)
+  capistrano (~> 3)
+  capistrano-bundler (~> 1)
+  capistrano-rails (~> 1)
   capistrano-rvm
   capistrano3-puma
   capybara (>= 2.15)

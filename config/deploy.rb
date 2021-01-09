@@ -1,8 +1,8 @@
 # Change these
-server '161.35.142.74', port: 22, roles: [:web, :app, :db], primary: true
+server '138.197.64.116', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:YairFernando67/JoinMe.git'
-set :application,     'JoinMe'
+set :application,     'joinme'
 set :user,            'yair'
 set :puma_threads,    [4, 16]
 set :puma_workers,    0
